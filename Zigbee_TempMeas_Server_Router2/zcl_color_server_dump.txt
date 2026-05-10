@@ -1,0 +1,1704 @@
+
+zcl_color_server.o:     file format elf32-littlearm
+
+
+Disassembly of section .text.zcl_attr_cb:
+
+00000000 <zcl_attr_cb>:
+   0:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   4:	b081      	sub	sp, #4
+   6:	790a      	ldrb	r2, [r1, #4]
+   8:	2a01      	cmp	r2, #1
+   a:	bf1e      	ittt	ne
+   c:	2001      	movne	r0, #1
+   e:	b001      	addne	sp, #4
+  10:	e8bd 83f0 	ldmiane.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+  14:	4605      	mov	r5, r0
+  16:	6808      	ldr	r0, [r1, #0]
+  18:	f244 020d 	movw	r2, #16397	@ 0x400d
+  1c:	8800      	ldrh	r0, [r0, #0]
+  1e:	4290      	cmp	r0, r2
+  20:	bf1e      	ittt	ne
+  22:	2086      	movne	r0, #134	@ 0x86
+  24:	b001      	addne	sp, #4
+  26:	e8bd 83f0 	ldmiane.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+  2a:	688c      	ldr	r4, [r1, #8]
+  2c:	f8d1 8014 	ldr.w	r8, [r1, #20]
+  30:	f8b1 9010 	ldrh.w	r9, [r1, #16]
+  34:	4620      	mov	r0, r4
+  36:	f7ff fffe 	bl	0 <pletoh16>
+  3a:	4606      	mov	r6, r0
+  3c:	4628      	mov	r0, r5
+  3e:	f244 010b 	movw	r1, #16395	@ 0x400b
+  42:	2200      	movs	r2, #0
+  44:	2300      	movs	r3, #0
+  46:	f7ff fffe 	bl	0 <ZbZclAttrIntegerRead>
+  4a:	4607      	mov	r7, r0
+  4c:	4628      	mov	r0, r5
+  4e:	2107      	movs	r1, #7
+  50:	2200      	movs	r2, #0
+  52:	2300      	movs	r3, #0
+  54:	f7ff fffe 	bl	0 <ZbZclAttrIntegerRead>
+  58:	b2ba      	uxth	r2, r7
+  5a:	4601      	mov	r1, r0
+  5c:	42b2      	cmp	r2, r6
+  5e:	f04f 0087 	mov.w	r0, #135	@ 0x87
+  62:	d810      	bhi.n	86 <zcl_attr_cb+0x86>
+  64:	b289      	uxth	r1, r1
+  66:	42b1      	cmp	r1, r6
+  68:	d30d      	bcc.n	86 <zcl_attr_cb+0x86>
+  6a:	ea5f 70c9 	movs.w	r0, r9, lsl #31
+  6e:	bf1e      	ittt	ne
+  70:	2000      	movne	r0, #0
+  72:	b001      	addne	sp, #4
+  74:	e8bd 83f0 	ldmiane.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+  78:	7860      	ldrb	r0, [r4, #1]
+  7a:	7821      	ldrb	r1, [r4, #0]
+  7c:	f888 0001 	strb.w	r0, [r8, #1]
+  80:	2000      	movs	r0, #0
+  82:	f888 1000 	strb.w	r1, [r8]
+  86:	b001      	add	sp, #4
+  88:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+Disassembly of section .text.ZbZclColorServerAlloc:
+
+00000000 <ZbZclColorServerAlloc>:
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+   2:	b081      	sub	sp, #4
+   4:	9d07      	ldr	r5, [sp, #28]
+   6:	2d00      	cmp	r5, #0
+   8:	d04b      	beq.n	a2 <ZbZclColorServerAlloc+0xa2>
+   a:	461e      	mov	r6, r3
+   c:	460b      	mov	r3, r1
+   e:	f895 104c 	ldrb.w	r1, [r5, #76]	@ 0x4c
+  12:	4617      	mov	r7, r2
+  14:	f001 0203 	and.w	r2, r1, #3
+  18:	2a02      	cmp	r2, #2
+  1a:	f04f 0400 	mov.w	r4, #0
+  1e:	bf18      	it	ne
+  20:	f011 0108 	andsne.w	r1, r1, #8
+  24:	d102      	bne.n	2c <ZbZclColorServerAlloc+0x2c>
+  26:	4620      	mov	r0, r4
+  28:	b001      	add	sp, #4
+  2a:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  2c:	b13f      	cbz	r7, 3e <ZbZclColorServerAlloc+0x3e>
+  2e:	89b9      	ldrh	r1, [r7, #12]
+  30:	2906      	cmp	r1, #6
+  32:	d136      	bne.n	a2 <ZbZclColorServerAlloc+0xa2>
+  34:	7f39      	ldrb	r1, [r7, #28]
+  36:	bba1      	cbnz	r1, a2 <ZbZclColorServerAlloc+0xa2>
+  38:	7bb9      	ldrb	r1, [r7, #14]
+  3a:	4299      	cmp	r1, r3
+  3c:	d131      	bne.n	a2 <ZbZclColorServerAlloc+0xa2>
+  3e:	2400      	movs	r4, #0
+  40:	21d8      	movs	r1, #216	@ 0xd8
+  42:	f44f 7240 	mov.w	r2, #768	@ 0x300
+  46:	9400      	str	r4, [sp, #0]
+  48:	f7ff fffe 	bl	0 <ZbZclClusterAlloc>
+  4c:	b348      	cbz	r0, a2 <ZbZclColorServerAlloc+0xa2>
+  4e:	f64f 71fd 	movw	r1, #65533	@ 0xfffd
+  52:	2202      	movs	r2, #2
+  54:	2300      	movs	r3, #0
+  56:	4604      	mov	r4, r0
+  58:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+  5c:	f240 0000 	movw	r0, #0
+  60:	f240 0100 	movw	r1, #0
+  64:	f2c0 0000 	movt	r0, #0
+  68:	f2c0 0100 	movt	r1, #0
+  6c:	e9c4 011e 	strd	r0, r1, [r4, #120]	@ 0x78
+  70:	f240 0000 	movw	r0, #0
+  74:	f2c0 0000 	movt	r0, #0
+  78:	66e0      	str	r0, [r4, #108]	@ 0x6c
+  7a:	f104 0088 	add.w	r0, r4, #136	@ 0x88
+  7e:	4629      	mov	r1, r5
+  80:	2250      	movs	r2, #80	@ 0x50
+  82:	f7ff fffe 	bl	0 <__aeabi_memcpy4>
+  86:	f240 0100 	movw	r1, #0
+  8a:	f2c0 0100 	movt	r1, #0
+  8e:	4620      	mov	r0, r4
+  90:	2205      	movs	r2, #5
+  92:	f8c4 7084 	str.w	r7, [r4, #132]	@ 0x84
+  96:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+  9a:	b138      	cbz	r0, ac <ZbZclColorServerAlloc+0xac>
+  9c:	4620      	mov	r0, r4
+  9e:	f7ff fffe 	bl	0 <ZbZclClusterFree>
+  a2:	2400      	movs	r4, #0
+  a4:	4620      	mov	r0, r4
+  a6:	b001      	add	sp, #4
+  a8:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  aa:	bf00      	nop
+  ac:	f895 004c 	ldrb.w	r0, [r5, #76]	@ 0x4c
+  b0:	07c1      	lsls	r1, r0, #31
+  b2:	d00b      	beq.n	cc <ZbZclColorServerAlloc+0xcc>
+  b4:	f240 0100 	movw	r1, #0
+  b8:	f2c0 0100 	movt	r1, #0
+  bc:	4620      	mov	r0, r4
+  be:	2202      	movs	r2, #2
+  c0:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+  c4:	2800      	cmp	r0, #0
+  c6:	d1e9      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+  c8:	f895 004c 	ldrb.w	r0, [r5, #76]	@ 0x4c
+  cc:	0781      	lsls	r1, r0, #30
+  ce:	d50b      	bpl.n	e8 <ZbZclColorServerAlloc+0xe8>
+  d0:	f240 0100 	movw	r1, #0
+  d4:	f2c0 0100 	movt	r1, #0
+  d8:	4620      	mov	r0, r4
+  da:	2201      	movs	r2, #1
+  dc:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+  e0:	2800      	cmp	r0, #0
+  e2:	d1db      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+  e4:	f895 004c 	ldrb.w	r0, [r5, #76]	@ 0x4c
+  e8:	0701      	lsls	r1, r0, #28
+  ea:	d50b      	bpl.n	104 <ZbZclColorServerAlloc+0x104>
+  ec:	f240 0100 	movw	r1, #0
+  f0:	f2c0 0100 	movt	r1, #0
+  f4:	4620      	mov	r0, r4
+  f6:	2202      	movs	r2, #2
+  f8:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+  fc:	2800      	cmp	r0, #0
+  fe:	d1cd      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+ 100:	f895 004c 	ldrb.w	r0, [r5, #76]	@ 0x4c
+ 104:	06c1      	lsls	r1, r0, #27
+ 106:	d50b      	bpl.n	120 <ZbZclColorServerAlloc+0x120>
+ 108:	f240 0100 	movw	r1, #0
+ 10c:	f2c0 0100 	movt	r1, #0
+ 110:	4620      	mov	r0, r4
+ 112:	2205      	movs	r2, #5
+ 114:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+ 118:	2800      	cmp	r0, #0
+ 11a:	d1bf      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+ 11c:	f895 004c 	ldrb.w	r0, [r5, #76]	@ 0x4c
+ 120:	0740      	lsls	r0, r0, #29
+ 122:	d509      	bpl.n	138 <ZbZclColorServerAlloc+0x138>
+ 124:	f240 0100 	movw	r1, #0
+ 128:	f2c0 0100 	movt	r1, #0
+ 12c:	4620      	mov	r0, r4
+ 12e:	2205      	movs	r2, #5
+ 130:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+ 134:	2800      	cmp	r0, #0
+ 136:	d1b1      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+ 138:	b136      	cbz	r6, 148 <ZbZclColorServerAlloc+0x148>
+ 13a:	9a06      	ldr	r2, [sp, #24]
+ 13c:	4620      	mov	r0, r4
+ 13e:	4631      	mov	r1, r6
+ 140:	f7ff fffe 	bl	0 <ZbZclAttrAppendList>
+ 144:	2800      	cmp	r0, #0
+ 146:	d1a9      	bne.n	9c <ZbZclColorServerAlloc+0x9c>
+ 148:	4620      	mov	r0, r4
+ 14a:	210f      	movs	r1, #15
+ 14c:	2200      	movs	r2, #0
+ 14e:	2300      	movs	r3, #0
+ 150:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 154:	4620      	mov	r0, r4
+ 156:	2108      	movs	r1, #8
+ 158:	2201      	movs	r2, #1
+ 15a:	2300      	movs	r3, #0
+ 15c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 160:	4620      	mov	r0, r4
+ 162:	f244 010a 	movw	r1, #16394	@ 0x400a
+ 166:	2200      	movs	r2, #0
+ 168:	2300      	movs	r3, #0
+ 16a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 16e:	4620      	mov	r0, r4
+ 170:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 174:	2201      	movs	r2, #1
+ 176:	2300      	movs	r3, #0
+ 178:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 17c:	4620      	mov	r0, r4
+ 17e:	2110      	movs	r1, #16
+ 180:	2200      	movs	r2, #0
+ 182:	2300      	movs	r3, #0
+ 184:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 188:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 18c:	07d0      	lsls	r0, r2, #31
+ 18e:	d11f      	bne.n	1d0 <ZbZclColorServerAlloc+0x1d0>
+ 190:	0710      	lsls	r0, r2, #28
+ 192:	d42d      	bmi.n	1f0 <ZbZclColorServerAlloc+0x1f0>
+ 194:	06d0      	lsls	r0, r2, #27
+ 196:	d43d      	bmi.n	214 <ZbZclColorServerAlloc+0x214>
+ 198:	0750      	lsls	r0, r2, #29
+ 19a:	d463      	bmi.n	264 <ZbZclColorServerAlloc+0x264>
+ 19c:	9e08      	ldr	r6, [sp, #32]
+ 19e:	0790      	lsls	r0, r2, #30
+ 1a0:	d508      	bpl.n	1b4 <ZbZclColorServerAlloc+0x1b4>
+ 1a2:	4620      	mov	r0, r4
+ 1a4:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
+ 1a8:	2200      	movs	r2, #0
+ 1aa:	2300      	movs	r3, #0
+ 1ac:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1b0:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 1b4:	4620      	mov	r0, r4
+ 1b6:	f244 010a 	movw	r1, #16394	@ 0x400a
+ 1ba:	2300      	movs	r3, #0
+ 1bc:	6666      	str	r6, [r4, #100]	@ 0x64
+ 1be:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1c2:	4620      	mov	r0, r4
+ 1c4:	f7ff fffe 	bl	0 <ZbZclClusterAttach>
+ 1c8:	4620      	mov	r0, r4
+ 1ca:	b001      	add	sp, #4
+ 1cc:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1ce:	bf00      	nop
+ 1d0:	4620      	mov	r0, r4
+ 1d2:	2100      	movs	r1, #0
+ 1d4:	2200      	movs	r2, #0
+ 1d6:	2300      	movs	r3, #0
+ 1d8:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1dc:	4620      	mov	r0, r4
+ 1de:	2101      	movs	r1, #1
+ 1e0:	2200      	movs	r2, #0
+ 1e2:	2300      	movs	r3, #0
+ 1e4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1e8:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 1ec:	0710      	lsls	r0, r2, #28
+ 1ee:	d5d1      	bpl.n	194 <ZbZclColorServerAlloc+0x194>
+ 1f0:	4620      	mov	r0, r4
+ 1f2:	2103      	movs	r1, #3
+ 1f4:	f246 126b 	movw	r2, #24939	@ 0x616b
+ 1f8:	2300      	movs	r3, #0
+ 1fa:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1fe:	4620      	mov	r0, r4
+ 200:	2104      	movs	r1, #4
+ 202:	f246 027d 	movw	r2, #24701	@ 0x607d
+ 206:	2300      	movs	r3, #0
+ 208:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 20c:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 210:	06d0      	lsls	r0, r2, #27
+ 212:	d5c1      	bpl.n	198 <ZbZclColorServerAlloc+0x198>
+ 214:	4620      	mov	r0, r4
+ 216:	2107      	movs	r1, #7
+ 218:	22fa      	movs	r2, #250	@ 0xfa
+ 21a:	2300      	movs	r3, #0
+ 21c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 220:	4620      	mov	r0, r4
+ 222:	f244 010b 	movw	r1, #16395	@ 0x400b
+ 226:	2200      	movs	r2, #0
+ 228:	2300      	movs	r3, #0
+ 22a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 22e:	4620      	mov	r0, r4
+ 230:	f244 010c 	movw	r1, #16396	@ 0x400c
+ 234:	f64f 62ff 	movw	r2, #65279	@ 0xfeff
+ 238:	2300      	movs	r3, #0
+ 23a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 23e:	4620      	mov	r0, r4
+ 240:	f244 010d 	movw	r1, #16397	@ 0x400d
+ 244:	2200      	movs	r2, #0
+ 246:	2300      	movs	r3, #0
+ 248:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 24c:	4620      	mov	r0, r4
+ 24e:	f244 0110 	movw	r1, #16400	@ 0x4010
+ 252:	f64f 62ff 	movw	r2, #65279	@ 0xfeff
+ 256:	2300      	movs	r3, #0
+ 258:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 25c:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 260:	0750      	lsls	r0, r2, #29
+ 262:	d59b      	bpl.n	19c <ZbZclColorServerAlloc+0x19c>
+ 264:	4620      	mov	r0, r4
+ 266:	f244 0102 	movw	r1, #16386	@ 0x4002
+ 26a:	2200      	movs	r2, #0
+ 26c:	2300      	movs	r3, #0
+ 26e:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 272:	4620      	mov	r0, r4
+ 274:	f244 0104 	movw	r1, #16388	@ 0x4004
+ 278:	2219      	movs	r2, #25
+ 27a:	2300      	movs	r3, #0
+ 27c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 280:	4620      	mov	r0, r4
+ 282:	f244 0105 	movw	r1, #16389	@ 0x4005
+ 286:	f44f 520c 	mov.w	r2, #8960	@ 0x2300
+ 28a:	2300      	movs	r3, #0
+ 28c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 290:	4620      	mov	r0, r4
+ 292:	f244 0103 	movw	r1, #16387	@ 0x4003
+ 296:	2200      	movs	r2, #0
+ 298:	2300      	movs	r3, #0
+ 29a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 29e:	4620      	mov	r0, r4
+ 2a0:	f244 0106 	movw	r1, #16390	@ 0x4006
+ 2a4:	2200      	movs	r2, #0
+ 2a6:	2300      	movs	r3, #0
+ 2a8:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 2ac:	f895 204c 	ldrb.w	r2, [r5, #76]	@ 0x4c
+ 2b0:	9e08      	ldr	r6, [sp, #32]
+ 2b2:	0790      	lsls	r0, r2, #30
+ 2b4:	f57f af7e 	bpl.w	1b4 <ZbZclColorServerAlloc+0x1b4>
+ 2b8:	e773      	b.n	1a2 <ZbZclColorServerAlloc+0x1a2>
+
+Disassembly of section .text.zcl_color_server_get_scene_data:
+
+00000000 <zcl_color_server_get_scene_data>:
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+   2:	b083      	sub	sp, #12
+   4:	460c      	mov	r4, r1
+   6:	2600      	movs	r6, #0
+   8:	2702      	movs	r7, #2
+   a:	ab02      	add	r3, sp, #8
+   c:	2103      	movs	r1, #3
+   e:	2200      	movs	r2, #0
+  10:	4605      	mov	r5, r0
+  12:	9700      	str	r7, [sp, #0]
+  14:	9601      	str	r6, [sp, #4]
+  16:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  1a:	b118      	cbz	r0, 24 <zcl_color_server_get_scene_data+0x24>
+  1c:	4630      	mov	r0, r6
+  1e:	b003      	add	sp, #12
+  20:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  22:	bf00      	nop
+  24:	f8bd 1008 	ldrh.w	r1, [sp, #8]
+  28:	1ce0      	adds	r0, r4, #3
+  2a:	f7ff fffe 	bl	0 <putle16>
+  2e:	ab02      	add	r3, sp, #8
+  30:	4628      	mov	r0, r5
+  32:	2104      	movs	r1, #4
+  34:	2200      	movs	r2, #0
+  36:	9700      	str	r7, [sp, #0]
+  38:	9601      	str	r6, [sp, #4]
+  3a:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  3e:	2800      	cmp	r0, #0
+  40:	d1ec      	bne.n	1c <zcl_color_server_get_scene_data+0x1c>
+  42:	f8bd 1008 	ldrh.w	r1, [sp, #8]
+  46:	1d60      	adds	r0, r4, #5
+  48:	f7ff fffe 	bl	0 <putle16>
+  4c:	f895 00d4 	ldrb.w	r0, [r5, #212]	@ 0xd4
+  50:	0780      	lsls	r0, r0, #30
+  52:	d403      	bmi.n	5c <zcl_color_server_get_scene_data+0x5c>
+  54:	2100      	movs	r1, #0
+  56:	f8ad 1008 	strh.w	r1, [sp, #8]
+  5a:	e00e      	b.n	7a <zcl_color_server_get_scene_data+0x7a>
+  5c:	2002      	movs	r0, #2
+  5e:	2600      	movs	r6, #0
+  60:	9000      	str	r0, [sp, #0]
+  62:	ab02      	add	r3, sp, #8
+  64:	4628      	mov	r0, r5
+  66:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
+  6a:	2200      	movs	r2, #0
+  6c:	9601      	str	r6, [sp, #4]
+  6e:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  72:	2800      	cmp	r0, #0
+  74:	d1d2      	bne.n	1c <zcl_color_server_get_scene_data+0x1c>
+  76:	f8bd 1008 	ldrh.w	r1, [sp, #8]
+  7a:	1de0      	adds	r0, r4, #7
+  7c:	f7ff fffe 	bl	0 <putle16>
+  80:	2001      	movs	r0, #1
+  82:	2600      	movs	r6, #0
+  84:	9000      	str	r0, [sp, #0]
+  86:	f10d 030b 	add.w	r3, sp, #11
+  8a:	4628      	mov	r0, r5
+  8c:	2101      	movs	r1, #1
+  8e:	2200      	movs	r2, #0
+  90:	9601      	str	r6, [sp, #4]
+  92:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  96:	2800      	cmp	r0, #0
+  98:	d1c0      	bne.n	1c <zcl_color_server_get_scene_data+0x1c>
+  9a:	f89d 000b 	ldrb.w	r0, [sp, #11]
+  9e:	7260      	strb	r0, [r4, #9]
+  a0:	f895 00d4 	ldrb.w	r0, [r5, #212]	@ 0xd4
+  a4:	0740      	lsls	r0, r0, #29
+  a6:	d40f      	bmi.n	c8 <zcl_color_server_get_scene_data+0xc8>
+  a8:	2000      	movs	r0, #0
+  aa:	72a0      	strb	r0, [r4, #10]
+  ac:	72e0      	strb	r0, [r4, #11]
+  ae:	f104 000c 	add.w	r0, r4, #12
+  b2:	2100      	movs	r1, #0
+  b4:	f7ff fffe 	bl	0 <putle16>
+  b8:	f895 00d4 	ldrb.w	r0, [r5, #212]	@ 0xd4
+  bc:	06c0      	lsls	r0, r0, #27
+  be:	d43b      	bmi.n	138 <zcl_color_server_get_scene_data+0x138>
+  c0:	2100      	movs	r1, #0
+  c2:	f8ad 1008 	strh.w	r1, [sp, #8]
+  c6:	e046      	b.n	156 <zcl_color_server_get_scene_data+0x156>
+  c8:	2600      	movs	r6, #0
+  ca:	2701      	movs	r7, #1
+  cc:	f10d 030b 	add.w	r3, sp, #11
+  d0:	4628      	mov	r0, r5
+  d2:	f244 0102 	movw	r1, #16386	@ 0x4002
+  d6:	2200      	movs	r2, #0
+  d8:	9700      	str	r7, [sp, #0]
+  da:	9601      	str	r6, [sp, #4]
+  dc:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  e0:	2800      	cmp	r0, #0
+  e2:	d19b      	bne.n	1c <zcl_color_server_get_scene_data+0x1c>
+  e4:	f89d 000b 	ldrb.w	r0, [sp, #11]
+  e8:	f10d 030b 	add.w	r3, sp, #11
+  ec:	72a0      	strb	r0, [r4, #10]
+  ee:	4628      	mov	r0, r5
+  f0:	f244 0103 	movw	r1, #16387	@ 0x4003
+  f4:	2200      	movs	r2, #0
+  f6:	9700      	str	r7, [sp, #0]
+  f8:	9601      	str	r6, [sp, #4]
+  fa:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  fe:	2800      	cmp	r0, #0
+ 100:	d18c      	bne.n	1c <zcl_color_server_get_scene_data+0x1c>
+ 102:	f89d 000b 	ldrb.w	r0, [sp, #11]
+ 106:	2600      	movs	r6, #0
+ 108:	72e0      	strb	r0, [r4, #11]
+ 10a:	2002      	movs	r0, #2
+ 10c:	9000      	str	r0, [sp, #0]
+ 10e:	ab02      	add	r3, sp, #8
+ 110:	4628      	mov	r0, r5
+ 112:	f244 0104 	movw	r1, #16388	@ 0x4004
+ 116:	2200      	movs	r2, #0
+ 118:	9601      	str	r6, [sp, #4]
+ 11a:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+ 11e:	2800      	cmp	r0, #0
+ 120:	f47f af7c 	bne.w	1c <zcl_color_server_get_scene_data+0x1c>
+ 124:	f8bd 1008 	ldrh.w	r1, [sp, #8]
+ 128:	f104 000c 	add.w	r0, r4, #12
+ 12c:	f7ff fffe 	bl	0 <putle16>
+ 130:	f895 00d4 	ldrb.w	r0, [r5, #212]	@ 0xd4
+ 134:	06c0      	lsls	r0, r0, #27
+ 136:	d5c3      	bpl.n	c0 <zcl_color_server_get_scene_data+0xc0>
+ 138:	2002      	movs	r0, #2
+ 13a:	2600      	movs	r6, #0
+ 13c:	9000      	str	r0, [sp, #0]
+ 13e:	ab02      	add	r3, sp, #8
+ 140:	4628      	mov	r0, r5
+ 142:	2107      	movs	r1, #7
+ 144:	2200      	movs	r2, #0
+ 146:	9601      	str	r6, [sp, #4]
+ 148:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+ 14c:	2800      	cmp	r0, #0
+ 14e:	f47f af65 	bne.w	1c <zcl_color_server_get_scene_data+0x1c>
+ 152:	f8bd 1008 	ldrh.w	r1, [sp, #8]
+ 156:	f104 000e 	add.w	r0, r4, #14
+ 15a:	f7ff fffe 	bl	0 <putle16>
+ 15e:	89a9      	ldrh	r1, [r5, #12]
+ 160:	4620      	mov	r0, r4
+ 162:	f7ff fffe 	bl	0 <putle16>
+ 166:	200d      	movs	r0, #13
+ 168:	2610      	movs	r6, #16
+ 16a:	70a0      	strb	r0, [r4, #2]
+ 16c:	4630      	mov	r0, r6
+ 16e:	b003      	add	sp, #12
+ 170:	bdf0      	pop	{r4, r5, r6, r7, pc}
+
+Disassembly of section .text.zcl_color_server_set_scene_data:
+
+00000000 <zcl_color_server_set_scene_data>:
+   0:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+   4:	b087      	sub	sp, #28
+   6:	2a0d      	cmp	r2, #13
+   8:	d136      	bne.n	78 <zcl_color_server_set_scene_data+0x78>
+   a:	4604      	mov	r4, r0
+   c:	4608      	mov	r0, r1
+   e:	469a      	mov	sl, r3
+  10:	4689      	mov	r9, r1
+  12:	f7ff fffe 	bl	0 <pletoh16>
+  16:	4680      	mov	r8, r0
+  18:	f109 0002 	add.w	r0, r9, #2
+  1c:	f7ff fffe 	bl	0 <pletoh16>
+  20:	4606      	mov	r6, r0
+  22:	f109 0004 	add.w	r0, r9, #4
+  26:	f7ff fffe 	bl	0 <pletoh16>
+  2a:	9003      	str	r0, [sp, #12]
+  2c:	f899 0006 	ldrb.w	r0, [r9, #6]
+  30:	f899 b007 	ldrb.w	fp, [r9, #7]
+  34:	9002      	str	r0, [sp, #8]
+  36:	f899 7008 	ldrb.w	r7, [r9, #8]
+  3a:	f109 0009 	add.w	r0, r9, #9
+  3e:	f7ff fffe 	bl	0 <pletoh16>
+  42:	4605      	mov	r5, r0
+  44:	f109 000b 	add.w	r0, r9, #11
+  48:	f7ff fffe 	bl	0 <pletoh16>
+  4c:	f894 10d4 	ldrb.w	r1, [r4, #212]	@ 0xd4
+  50:	4681      	mov	r9, r0
+  52:	0709      	lsls	r1, r1, #28
+  54:	d416      	bmi.n	84 <zcl_color_server_set_scene_data+0x84>
+  56:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+  5a:	0780      	lsls	r0, r0, #30
+  5c:	d43b      	bmi.n	d6 <zcl_color_server_set_scene_data+0xd6>
+  5e:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+  62:	0740      	lsls	r0, r0, #29
+  64:	d45b      	bmi.n	11e <zcl_color_server_set_scene_data+0x11e>
+  66:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+  6a:	06c0      	lsls	r0, r0, #27
+  6c:	d47a      	bmi.n	164 <zcl_color_server_set_scene_data+0x164>
+  6e:	2600      	movs	r6, #0
+  70:	4630      	mov	r0, r6
+  72:	b007      	add	sp, #28
+  74:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  78:	2687      	movs	r6, #135	@ 0x87
+  7a:	4630      	mov	r0, r6
+  7c:	b007      	add	sp, #28
+  7e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  82:	bf00      	nop
+  84:	9701      	str	r7, [sp, #4]
+  86:	464f      	mov	r7, r9
+  88:	46a9      	mov	r9, r5
+  8a:	f8d4 50a4 	ldr.w	r5, [r4, #164]	@ 0xa4
+  8e:	b17d      	cbz	r5, b0 <zcl_color_server_set_scene_data+0xb0>
+  90:	2000      	movs	r0, #0
+  92:	6e63      	ldr	r3, [r4, #100]	@ 0x64
+  94:	e9cd 0004 	strd	r0, r0, [sp, #16]
+  98:	a904      	add	r1, sp, #16
+  9a:	4620      	mov	r0, r4
+  9c:	2200      	movs	r2, #0
+  9e:	f8ad 8010 	strh.w	r8, [sp, #16]
+  a2:	f8ad 6012 	strh.w	r6, [sp, #18]
+  a6:	f8ad a014 	strh.w	sl, [sp, #20]
+  aa:	47a8      	blx	r5
+  ac:	e00c      	b.n	c8 <zcl_color_server_set_scene_data+0xc8>
+  ae:	bf00      	nop
+  b0:	4620      	mov	r0, r4
+  b2:	2103      	movs	r1, #3
+  b4:	4642      	mov	r2, r8
+  b6:	2300      	movs	r3, #0
+  b8:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+  bc:	4620      	mov	r0, r4
+  be:	2104      	movs	r1, #4
+  c0:	4632      	mov	r2, r6
+  c2:	2300      	movs	r3, #0
+  c4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+  c8:	464d      	mov	r5, r9
+  ca:	46b9      	mov	r9, r7
+  cc:	9f01      	ldr	r7, [sp, #4]
+  ce:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+  d2:	0780      	lsls	r0, r0, #30
+  d4:	d5c3      	bpl.n	5e <zcl_color_server_set_scene_data+0x5e>
+  d6:	f8d4 60c0 	ldr.w	r6, [r4, #192]	@ 0xc0
+  da:	b1ae      	cbz	r6, 108 <zcl_color_server_set_scene_data+0x108>
+  dc:	2000      	movs	r0, #0
+  de:	e9cd 0004 	strd	r0, r0, [sp, #16]
+  e2:	9803      	ldr	r0, [sp, #12]
+  e4:	6e63      	ldr	r3, [r4, #100]	@ 0x64
+  e6:	f8ad 0010 	strh.w	r0, [sp, #16]
+  ea:	9802      	ldr	r0, [sp, #8]
+  ec:	a904      	add	r1, sp, #16
+  ee:	f88d 0012 	strb.w	r0, [sp, #18]
+  f2:	4620      	mov	r0, r4
+  f4:	2200      	movs	r2, #0
+  f6:	f8ad a014 	strh.w	sl, [sp, #20]
+  fa:	47b0      	blx	r6
+  fc:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+ 100:	0740      	lsls	r0, r0, #29
+ 102:	d5b0      	bpl.n	66 <zcl_color_server_set_scene_data+0x66>
+ 104:	e00b      	b.n	11e <zcl_color_server_set_scene_data+0x11e>
+ 106:	bf00      	nop
+ 108:	9a03      	ldr	r2, [sp, #12]
+ 10a:	4620      	mov	r0, r4
+ 10c:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
+ 110:	2300      	movs	r3, #0
+ 112:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 116:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+ 11a:	0740      	lsls	r0, r0, #29
+ 11c:	d5a3      	bpl.n	66 <zcl_color_server_set_scene_data+0x66>
+ 11e:	f8d4 60c4 	ldr.w	r6, [r4, #196]	@ 0xc4
+ 122:	b39e      	cbz	r6, 18c <zcl_color_server_set_scene_data+0x18c>
+ 124:	2000      	movs	r0, #0
+ 126:	f8ad 0012 	strh.w	r0, [sp, #18]
+ 12a:	f8ad 0018 	strh.w	r0, [sp, #24]
+ 12e:	200f      	movs	r0, #15
+ 130:	f88d 0010 	strb.w	r0, [sp, #16]
+ 134:	f1bb 0f00 	cmp.w	fp, #0
+ 138:	bf18      	it	ne
+ 13a:	f04f 0b01 	movne.w	fp, #1
+ 13e:	9803      	ldr	r0, [sp, #12]
+ 140:	6e63      	ldr	r3, [r4, #100]	@ 0x64
+ 142:	f8ad 0016 	strh.w	r0, [sp, #22]
+ 146:	a904      	add	r1, sp, #16
+ 148:	4620      	mov	r0, r4
+ 14a:	2200      	movs	r2, #0
+ 14c:	f88d b011 	strb.w	fp, [sp, #17]
+ 150:	f88d 7012 	strb.w	r7, [sp, #18]
+ 154:	f8ad 5014 	strh.w	r5, [sp, #20]
+ 158:	47b0      	blx	r6
+ 15a:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+ 15e:	06c0      	lsls	r0, r0, #27
+ 160:	f57f af85 	bpl.w	6e <zcl_color_server_set_scene_data+0x6e>
+ 164:	f8d4 70b0 	ldr.w	r7, [r4, #176]	@ 0xb0
+ 168:	b367      	cbz	r7, 1c4 <zcl_color_server_set_scene_data+0x1c4>
+ 16a:	6e63      	ldr	r3, [r4, #100]	@ 0x64
+ 16c:	2600      	movs	r6, #0
+ 16e:	a904      	add	r1, sp, #16
+ 170:	4620      	mov	r0, r4
+ 172:	2200      	movs	r2, #0
+ 174:	f8ad 6014 	strh.w	r6, [sp, #20]
+ 178:	f8ad 9010 	strh.w	r9, [sp, #16]
+ 17c:	f8ad a012 	strh.w	sl, [sp, #18]
+ 180:	47b8      	blx	r7
+ 182:	4630      	mov	r0, r6
+ 184:	b007      	add	sp, #28
+ 186:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 18a:	bf00      	nop
+ 18c:	4620      	mov	r0, r4
+ 18e:	f244 0102 	movw	r1, #16386	@ 0x4002
+ 192:	465a      	mov	r2, fp
+ 194:	2300      	movs	r3, #0
+ 196:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 19a:	4620      	mov	r0, r4
+ 19c:	f244 0103 	movw	r1, #16387	@ 0x4003
+ 1a0:	463a      	mov	r2, r7
+ 1a2:	2300      	movs	r3, #0
+ 1a4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1a8:	4620      	mov	r0, r4
+ 1aa:	f244 0104 	movw	r1, #16388	@ 0x4004
+ 1ae:	462a      	mov	r2, r5
+ 1b0:	2300      	movs	r3, #0
+ 1b2:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1b6:	f894 00d4 	ldrb.w	r0, [r4, #212]	@ 0xd4
+ 1ba:	06c0      	lsls	r0, r0, #27
+ 1bc:	f57f af57 	bpl.w	6e <zcl_color_server_set_scene_data+0x6e>
+ 1c0:	e7d0      	b.n	164 <zcl_color_server_set_scene_data+0x164>
+ 1c2:	bf00      	nop
+ 1c4:	4620      	mov	r0, r4
+ 1c6:	2107      	movs	r1, #7
+ 1c8:	464a      	mov	r2, r9
+ 1ca:	2300      	movs	r3, #0
+ 1cc:	2600      	movs	r6, #0
+ 1ce:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1d2:	4630      	mov	r0, r6
+ 1d4:	b007      	add	sp, #28
+ 1d6:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+
+Disassembly of section .text.zcl_color_server_handle_command:
+
+00000000 <zcl_color_server_handle_command>:
+   0:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   4:	b08d      	sub	sp, #52	@ 0x34
+   6:	4615      	mov	r5, r2
+   8:	4681      	mov	r9, r0
+   a:	2000      	movs	r0, #0
+   c:	3218      	adds	r2, #24
+   e:	460e      	mov	r6, r1
+  10:	e9cd 000a 	strd	r0, r0, [sp, #40]	@ 0x28
+  14:	ca07      	ldmia	r2, {r0, r1, r2}
+  16:	f10d 0c10 	add.w	ip, sp, #16
+  1a:	e9d5 3709 	ldrd	r3, r7, [r5, #36]	@ 0x24
+  1e:	6aec      	ldr	r4, [r5, #44]	@ 0x2c
+  20:	e88c 008f 	stmia.w	ip, {r0, r1, r2, r3, r7}
+  24:	79b1      	ldrb	r1, [r6, #6]
+  26:	f895 003a 	ldrb.w	r0, [r5, #58]	@ 0x3a
+  2a:	9409      	str	r4, [sp, #36]	@ 0x24
+  2c:	f88d 1028 	strb.w	r1, [sp, #40]	@ 0x28
+  30:	f7ff fffe 	bl	0 <ZbZclTxOptsFromSecurityStatus>
+  34:	78b1      	ldrb	r1, [r6, #2]
+  36:	f8ad 002a 	strh.w	r0, [sp, #42]	@ 0x2a
+  3a:	b119      	cbz	r1, 44 <zcl_color_server_handle_command+0x44>
+  3c:	2081      	movs	r0, #129	@ 0x81
+  3e:	b00d      	add	sp, #52	@ 0x34
+  40:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+  44:	79f1      	ldrb	r1, [r6, #7]
+  46:	2081      	movs	r0, #129	@ 0x81
+  48:	294c      	cmp	r1, #76	@ 0x4c
+  4a:	f200 83d1 	bhi.w	7f0 <zcl_color_server_handle_command+0x7f0>
+  4e:	e8df f011 	tbh	[pc, r1, lsl #1]
+  52:	004d      	.short	0x004d
+  54:	00c9008d 	.word	0x00c9008d
+  58:	01410105 	.word	0x01410105
+  5c:	01b7017d 	.word	0x01b7017d
+  60:	03d301f5 	.word	0x03d301f5
+  64:	02370413 	.word	0x02370413
+  68:	03cf03cf 	.word	0x03cf03cf
+  6c:	03cf03cf 	.word	0x03cf03cf
+  70:	03cf03cf 	.word	0x03cf03cf
+  74:	03cf03cf 	.word	0x03cf03cf
+  78:	03cf03cf 	.word	0x03cf03cf
+  7c:	03cf03cf 	.word	0x03cf03cf
+  80:	03cf03cf 	.word	0x03cf03cf
+  84:	03cf03cf 	.word	0x03cf03cf
+  88:	03cf03cf 	.word	0x03cf03cf
+  8c:	03cf03cf 	.word	0x03cf03cf
+  90:	03cf03cf 	.word	0x03cf03cf
+  94:	03cf03cf 	.word	0x03cf03cf
+  98:	03cf03cf 	.word	0x03cf03cf
+  9c:	03cf03cf 	.word	0x03cf03cf
+  a0:	03cf03cf 	.word	0x03cf03cf
+  a4:	03cf03cf 	.word	0x03cf03cf
+  a8:	03cf03cf 	.word	0x03cf03cf
+  ac:	03cf03cf 	.word	0x03cf03cf
+  b0:	03cf03cf 	.word	0x03cf03cf
+  b4:	03cf03cf 	.word	0x03cf03cf
+  b8:	03cf03cf 	.word	0x03cf03cf
+  bc:	03cf03cf 	.word	0x03cf03cf
+  c0:	03cf03cf 	.word	0x03cf03cf
+  c4:	03cf03cf 	.word	0x03cf03cf
+  c8:	03cf03cf 	.word	0x03cf03cf
+  cc:	03cf03cf 	.word	0x03cf03cf
+  d0:	027b03cf 	.word	0x027b03cf
+  d4:	02ff02bb 	.word	0x02ff02bb
+  d8:	0455033f 	.word	0x0455033f
+  dc:	03cf03cf 	.word	0x03cf03cf
+  e0:	03cf0495 	.word	0x03cf0495
+  e4:	03cf03cf 	.word	0x03cf03cf
+  e8:	037f04b3 	.word	0x037f04b3
+  ec:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+  ee:	2804      	cmp	r0, #4
+  f0:	f0c0 8465 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+  f4:	f8d9 0088 	ldr.w	r0, [r9, #136]	@ 0x88
+  f8:	2800      	cmp	r0, #0
+  fa:	f43f af9f 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+  fe:	2600      	movs	r6, #0
+ 100:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 102:	f8ad 6004 	strh.w	r6, [sp, #4]
+ 106:	f810 1b02 	ldrb.w	r1, [r0], #2
+ 10a:	f88d 1000 	strb.w	r1, [sp]
+ 10e:	f810 2c01 	ldrb.w	r2, [r0, #-1]
+ 112:	f88d 2001 	strb.w	r2, [sp, #1]
+ 116:	f7ff fffe 	bl	0 <pletoh16>
+ 11a:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 11c:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 120:	2906      	cmp	r1, #6
+ 122:	f04f 0100 	mov.w	r1, #0
+ 126:	d306      	bcc.n	136 <zcl_color_server_handle_command+0x136>
+ 128:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 12a:	7901      	ldrb	r1, [r0, #4]
+ 12c:	7946      	ldrb	r6, [r0, #5]
+ 12e:	f88d 1004 	strb.w	r1, [sp, #4]
+ 132:	f88d 6005 	strb.w	r6, [sp, #5]
+ 136:	4648      	mov	r0, r9
+ 138:	4632      	mov	r2, r6
+ 13a:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 13e:	2800      	cmp	r0, #0
+ 140:	f000 8492 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 144:	4648      	mov	r0, r9
+ 146:	2108      	movs	r1, #8
+ 148:	2200      	movs	r2, #0
+ 14a:	2300      	movs	r3, #0
+ 14c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 150:	4648      	mov	r0, r9
+ 152:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 156:	2200      	movs	r2, #0
+ 158:	2300      	movs	r3, #0
+ 15a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 15e:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 162:	f8d9 7088 	ldr.w	r7, [r9, #136]	@ 0x88
+ 166:	f000 bc78 	b.w	a5a <zcl_color_server_handle_command+0xa5a>
+ 16a:	bf00      	nop
+ 16c:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 16e:	2802      	cmp	r0, #2
+ 170:	f0c0 8425 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 174:	f8d9 108c 	ldr.w	r1, [r9, #140]	@ 0x8c
+ 178:	2900      	cmp	r1, #0
+ 17a:	f43f af5f 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 17e:	2200      	movs	r2, #0
+ 180:	6b6b      	ldr	r3, [r5, #52]	@ 0x34
+ 182:	9200      	str	r2, [sp, #0]
+ 184:	781e      	ldrb	r6, [r3, #0]
+ 186:	785d      	ldrb	r5, [r3, #1]
+ 188:	2804      	cmp	r0, #4
+ 18a:	f04f 0100 	mov.w	r1, #0
+ 18e:	f88d 6000 	strb.w	r6, [sp]
+ 192:	f88d 5001 	strb.w	r5, [sp, #1]
+ 196:	d305      	bcc.n	1a4 <zcl_color_server_handle_command+0x1a4>
+ 198:	7899      	ldrb	r1, [r3, #2]
+ 19a:	78da      	ldrb	r2, [r3, #3]
+ 19c:	f88d 1002 	strb.w	r1, [sp, #2]
+ 1a0:	f88d 2003 	strb.w	r2, [sp, #3]
+ 1a4:	4648      	mov	r0, r9
+ 1a6:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 1aa:	2800      	cmp	r0, #0
+ 1ac:	f000 845c 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 1b0:	f006 00fd 	and.w	r0, r6, #253	@ 0xfd
+ 1b4:	2801      	cmp	r0, #1
+ 1b6:	bf08      	it	eq
+ 1b8:	2d00      	cmpeq	r5, #0
+ 1ba:	f000 8459 	beq.w	a70 <zcl_color_server_handle_command+0xa70>
+ 1be:	4648      	mov	r0, r9
+ 1c0:	2108      	movs	r1, #8
+ 1c2:	2200      	movs	r2, #0
+ 1c4:	2300      	movs	r3, #0
+ 1c6:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1ca:	4648      	mov	r0, r9
+ 1cc:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 1d0:	2200      	movs	r2, #0
+ 1d2:	2300      	movs	r3, #0
+ 1d4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 1d8:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 1dc:	f8d9 708c 	ldr.w	r7, [r9, #140]	@ 0x8c
+ 1e0:	f000 bc3b 	b.w	a5a <zcl_color_server_handle_command+0xa5a>
+ 1e4:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 1e6:	2803      	cmp	r0, #3
+ 1e8:	f0c0 83e9 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 1ec:	f8d9 1090 	ldr.w	r1, [r9, #144]	@ 0x90
+ 1f0:	2900      	cmp	r1, #0
+ 1f2:	f43f af23 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 1f6:	2200      	movs	r2, #0
+ 1f8:	6b6b      	ldr	r3, [r5, #52]	@ 0x34
+ 1fa:	f88d 2004 	strb.w	r2, [sp, #4]
+ 1fe:	f88d 2003 	strb.w	r2, [sp, #3]
+ 202:	7819      	ldrb	r1, [r3, #0]
+ 204:	785f      	ldrb	r7, [r3, #1]
+ 206:	789e      	ldrb	r6, [r3, #2]
+ 208:	f88d 1000 	strb.w	r1, [sp]
+ 20c:	2805      	cmp	r0, #5
+ 20e:	f04f 0100 	mov.w	r1, #0
+ 212:	f88d 7001 	strb.w	r7, [sp, #1]
+ 216:	f88d 6002 	strb.w	r6, [sp, #2]
+ 21a:	d305      	bcc.n	228 <zcl_color_server_handle_command+0x228>
+ 21c:	78d9      	ldrb	r1, [r3, #3]
+ 21e:	791a      	ldrb	r2, [r3, #4]
+ 220:	f88d 1003 	strb.w	r1, [sp, #3]
+ 224:	f88d 2004 	strb.w	r2, [sp, #4]
+ 228:	4648      	mov	r0, r9
+ 22a:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 22e:	2800      	cmp	r0, #0
+ 230:	f000 841a 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 234:	4648      	mov	r0, r9
+ 236:	2108      	movs	r1, #8
+ 238:	2200      	movs	r2, #0
+ 23a:	2300      	movs	r3, #0
+ 23c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 240:	4648      	mov	r0, r9
+ 242:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 246:	2200      	movs	r2, #0
+ 248:	2300      	movs	r3, #0
+ 24a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 24e:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 252:	f8d9 7090 	ldr.w	r7, [r9, #144]	@ 0x90
+ 256:	f000 bc00 	b.w	a5a <zcl_color_server_handle_command+0xa5a>
+ 25a:	bf00      	nop
+ 25c:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 25e:	2803      	cmp	r0, #3
+ 260:	f0c0 83ad 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 264:	f8d9 0094 	ldr.w	r0, [r9, #148]	@ 0x94
+ 268:	2800      	cmp	r0, #0
+ 26a:	f43f aee7 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 26e:	2600      	movs	r6, #0
+ 270:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 272:	f8ad 6004 	strh.w	r6, [sp, #4]
+ 276:	9600      	str	r6, [sp, #0]
+ 278:	f810 1b01 	ldrb.w	r1, [r0], #1
+ 27c:	f88d 1000 	strb.w	r1, [sp]
+ 280:	f7ff fffe 	bl	0 <pletoh16>
+ 284:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 286:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 28a:	2905      	cmp	r1, #5
+ 28c:	f04f 0100 	mov.w	r1, #0
+ 290:	d306      	bcc.n	2a0 <zcl_color_server_handle_command+0x2a0>
+ 292:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 294:	78c1      	ldrb	r1, [r0, #3]
+ 296:	f88d 1004 	strb.w	r1, [sp, #4]
+ 29a:	7906      	ldrb	r6, [r0, #4]
+ 29c:	f88d 6005 	strb.w	r6, [sp, #5]
+ 2a0:	4648      	mov	r0, r9
+ 2a2:	4632      	mov	r2, r6
+ 2a4:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 2a8:	2800      	cmp	r0, #0
+ 2aa:	f000 83dd 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 2ae:	4648      	mov	r0, r9
+ 2b0:	2108      	movs	r1, #8
+ 2b2:	2200      	movs	r2, #0
+ 2b4:	2300      	movs	r3, #0
+ 2b6:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 2ba:	4648      	mov	r0, r9
+ 2bc:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 2c0:	2200      	movs	r2, #0
+ 2c2:	2300      	movs	r3, #0
+ 2c4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 2c8:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 2cc:	f8d9 7094 	ldr.w	r7, [r9, #148]	@ 0x94
+ 2d0:	e3c3      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 2d2:	bf00      	nop
+ 2d4:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 2d6:	2902      	cmp	r1, #2
+ 2d8:	f0c0 8371 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 2dc:	f8d9 0098 	ldr.w	r0, [r9, #152]	@ 0x98
+ 2e0:	2800      	cmp	r0, #0
+ 2e2:	f43f aeab 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 2e6:	2200      	movs	r2, #0
+ 2e8:	6b6f      	ldr	r7, [r5, #52]	@ 0x34
+ 2ea:	9200      	str	r2, [sp, #0]
+ 2ec:	783b      	ldrb	r3, [r7, #0]
+ 2ee:	7878      	ldrb	r0, [r7, #1]
+ 2f0:	2904      	cmp	r1, #4
+ 2f2:	f04f 0100 	mov.w	r1, #0
+ 2f6:	f88d 3000 	strb.w	r3, [sp]
+ 2fa:	f88d 0001 	strb.w	r0, [sp, #1]
+ 2fe:	d305      	bcc.n	30c <zcl_color_server_handle_command+0x30c>
+ 300:	78b9      	ldrb	r1, [r7, #2]
+ 302:	78fa      	ldrb	r2, [r7, #3]
+ 304:	f88d 1002 	strb.w	r1, [sp, #2]
+ 308:	f88d 2003 	strb.w	r2, [sp, #3]
+ 30c:	f003 03fd 	and.w	r3, r3, #253	@ 0xfd
+ 310:	2b01      	cmp	r3, #1
+ 312:	bf08      	it	eq
+ 314:	2800      	cmpeq	r0, #0
+ 316:	f000 83ab 	beq.w	a70 <zcl_color_server_handle_command+0xa70>
+ 31a:	4648      	mov	r0, r9
+ 31c:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 320:	2800      	cmp	r0, #0
+ 322:	f000 83a1 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 326:	4648      	mov	r0, r9
+ 328:	2108      	movs	r1, #8
+ 32a:	2200      	movs	r2, #0
+ 32c:	2300      	movs	r3, #0
+ 32e:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 332:	4648      	mov	r0, r9
+ 334:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 338:	2200      	movs	r2, #0
+ 33a:	2300      	movs	r3, #0
+ 33c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 340:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 344:	f8d9 7098 	ldr.w	r7, [r9, #152]	@ 0x98
+ 348:	e387      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 34a:	bf00      	nop
+ 34c:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 34e:	2803      	cmp	r0, #3
+ 350:	f0c0 8335 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 354:	f8d9 109c 	ldr.w	r1, [r9, #156]	@ 0x9c
+ 358:	2900      	cmp	r1, #0
+ 35a:	f43f ae6f 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 35e:	2200      	movs	r2, #0
+ 360:	6b6b      	ldr	r3, [r5, #52]	@ 0x34
+ 362:	f88d 2004 	strb.w	r2, [sp, #4]
+ 366:	f88d 2003 	strb.w	r2, [sp, #3]
+ 36a:	7819      	ldrb	r1, [r3, #0]
+ 36c:	785f      	ldrb	r7, [r3, #1]
+ 36e:	789e      	ldrb	r6, [r3, #2]
+ 370:	f88d 1000 	strb.w	r1, [sp]
+ 374:	2805      	cmp	r0, #5
+ 376:	f04f 0100 	mov.w	r1, #0
+ 37a:	f88d 7001 	strb.w	r7, [sp, #1]
+ 37e:	f88d 6002 	strb.w	r6, [sp, #2]
+ 382:	d305      	bcc.n	390 <zcl_color_server_handle_command+0x390>
+ 384:	78d9      	ldrb	r1, [r3, #3]
+ 386:	791a      	ldrb	r2, [r3, #4]
+ 388:	f88d 1003 	strb.w	r1, [sp, #3]
+ 38c:	f88d 2004 	strb.w	r2, [sp, #4]
+ 390:	4648      	mov	r0, r9
+ 392:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 396:	2800      	cmp	r0, #0
+ 398:	f000 8366 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 39c:	4648      	mov	r0, r9
+ 39e:	2108      	movs	r1, #8
+ 3a0:	2200      	movs	r2, #0
+ 3a2:	2300      	movs	r3, #0
+ 3a4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 3a8:	4648      	mov	r0, r9
+ 3aa:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 3ae:	2200      	movs	r2, #0
+ 3b0:	2300      	movs	r3, #0
+ 3b2:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 3b6:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 3ba:	f8d9 709c 	ldr.w	r7, [r9, #156]	@ 0x9c
+ 3be:	e34c      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 3c0:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 3c2:	2804      	cmp	r0, #4
+ 3c4:	f0c0 82fb 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 3c8:	f8d9 00a0 	ldr.w	r0, [r9, #160]	@ 0xa0
+ 3cc:	2800      	cmp	r0, #0
+ 3ce:	f43f ae35 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 3d2:	2600      	movs	r6, #0
+ 3d4:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 3d6:	f8ad 6004 	strh.w	r6, [sp, #4]
+ 3da:	f810 1b02 	ldrb.w	r1, [r0], #2
+ 3de:	f88d 1000 	strb.w	r1, [sp]
+ 3e2:	f810 2c01 	ldrb.w	r2, [r0, #-1]
+ 3e6:	f88d 2001 	strb.w	r2, [sp, #1]
+ 3ea:	f7ff fffe 	bl	0 <pletoh16>
+ 3ee:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 3f0:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 3f4:	2906      	cmp	r1, #6
+ 3f6:	f04f 0100 	mov.w	r1, #0
+ 3fa:	d306      	bcc.n	40a <zcl_color_server_handle_command+0x40a>
+ 3fc:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 3fe:	7901      	ldrb	r1, [r0, #4]
+ 400:	7946      	ldrb	r6, [r0, #5]
+ 402:	f88d 1004 	strb.w	r1, [sp, #4]
+ 406:	f88d 6005 	strb.w	r6, [sp, #5]
+ 40a:	4648      	mov	r0, r9
+ 40c:	4632      	mov	r2, r6
+ 40e:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 412:	2800      	cmp	r0, #0
+ 414:	f000 8328 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 418:	4648      	mov	r0, r9
+ 41a:	2108      	movs	r1, #8
+ 41c:	2200      	movs	r2, #0
+ 41e:	2300      	movs	r3, #0
+ 420:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 424:	4648      	mov	r0, r9
+ 426:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 42a:	2200      	movs	r2, #0
+ 42c:	2300      	movs	r3, #0
+ 42e:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 432:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 436:	f8d9 70a0 	ldr.w	r7, [r9, #160]	@ 0xa0
+ 43a:	e30e      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 43c:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 43e:	2806      	cmp	r0, #6
+ 440:	f0c0 82bd 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 444:	f8d9 00a4 	ldr.w	r0, [r9, #164]	@ 0xa4
+ 448:	2800      	cmp	r0, #0
+ 44a:	f43f adf7 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 44e:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 450:	2600      	movs	r6, #0
+ 452:	9601      	str	r6, [sp, #4]
+ 454:	9600      	str	r6, [sp, #0]
+ 456:	f7ff fffe 	bl	0 <pletoh16>
+ 45a:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 45c:	f8ad 0000 	strh.w	r0, [sp]
+ 460:	1c88      	adds	r0, r1, #2
+ 462:	f7ff fffe 	bl	0 <pletoh16>
+ 466:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 468:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 46c:	1d08      	adds	r0, r1, #4
+ 46e:	f7ff fffe 	bl	0 <pletoh16>
+ 472:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 474:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 478:	2908      	cmp	r1, #8
+ 47a:	f04f 0100 	mov.w	r1, #0
+ 47e:	d306      	bcc.n	48e <zcl_color_server_handle_command+0x48e>
+ 480:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 482:	7981      	ldrb	r1, [r0, #6]
+ 484:	79c6      	ldrb	r6, [r0, #7]
+ 486:	f88d 1006 	strb.w	r1, [sp, #6]
+ 48a:	f88d 6007 	strb.w	r6, [sp, #7]
+ 48e:	4648      	mov	r0, r9
+ 490:	4632      	mov	r2, r6
+ 492:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 496:	2800      	cmp	r0, #0
+ 498:	f000 82e6 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 49c:	4648      	mov	r0, r9
+ 49e:	2108      	movs	r1, #8
+ 4a0:	2201      	movs	r2, #1
+ 4a2:	2300      	movs	r3, #0
+ 4a4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 4a8:	4648      	mov	r0, r9
+ 4aa:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 4ae:	2201      	movs	r2, #1
+ 4b0:	2300      	movs	r3, #0
+ 4b2:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 4b6:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 4ba:	f8d9 70a4 	ldr.w	r7, [r9, #164]	@ 0xa4
+ 4be:	e2cc      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 4c0:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 4c2:	2804      	cmp	r0, #4
+ 4c4:	f0c0 827b 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 4c8:	f8d9 00b0 	ldr.w	r0, [r9, #176]	@ 0xb0
+ 4cc:	2800      	cmp	r0, #0
+ 4ce:	f43f adb5 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 4d2:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 4d4:	2700      	movs	r7, #0
+ 4d6:	f8ad 7004 	strh.w	r7, [sp, #4]
+ 4da:	f7ff fffe 	bl	0 <pletoh16>
+ 4de:	4606      	mov	r6, r0
+ 4e0:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 4e2:	f8ad 6000 	strh.w	r6, [sp]
+ 4e6:	3002      	adds	r0, #2
+ 4e8:	f7ff fffe 	bl	0 <pletoh16>
+ 4ec:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 4ee:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 4f2:	2906      	cmp	r1, #6
+ 4f4:	f04f 0100 	mov.w	r1, #0
+ 4f8:	d306      	bcc.n	508 <zcl_color_server_handle_command+0x508>
+ 4fa:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 4fc:	7901      	ldrb	r1, [r0, #4]
+ 4fe:	7947      	ldrb	r7, [r0, #5]
+ 500:	f88d 1004 	strb.w	r1, [sp, #4]
+ 504:	f88d 7005 	strb.w	r7, [sp, #5]
+ 508:	4648      	mov	r0, r9
+ 50a:	463a      	mov	r2, r7
+ 50c:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 510:	2800      	cmp	r0, #0
+ 512:	f000 82a9 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 516:	4648      	mov	r0, r9
+ 518:	2108      	movs	r1, #8
+ 51a:	2202      	movs	r2, #2
+ 51c:	2300      	movs	r3, #0
+ 51e:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 522:	4648      	mov	r0, r9
+ 524:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 528:	2202      	movs	r2, #2
+ 52a:	2300      	movs	r3, #0
+ 52c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 530:	f5b6 4f7f 	cmp.w	r6, #65280	@ 0xff00
+ 534:	bf24      	itt	cs
+ 536:	f64f 60ff 	movwcs	r0, #65279	@ 0xfeff
+ 53a:	f8ad 0000 	strhcs.w	r0, [sp]
+ 53e:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 542:	f8d9 70b0 	ldr.w	r7, [r9, #176]	@ 0xb0
+ 546:	e288      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 548:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 54a:	2805      	cmp	r0, #5
+ 54c:	f0c0 8237 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 550:	f8d9 00b4 	ldr.w	r0, [r9, #180]	@ 0xb4
+ 554:	2800      	cmp	r0, #0
+ 556:	f43f ad71 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 55a:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 55c:	2600      	movs	r6, #0
+ 55e:	9601      	str	r6, [sp, #4]
+ 560:	9600      	str	r6, [sp, #0]
+ 562:	f7ff fffe 	bl	0 <pletoh16>
+ 566:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 568:	f8ad 0000 	strh.w	r0, [sp]
+ 56c:	788a      	ldrb	r2, [r1, #2]
+ 56e:	1cc8      	adds	r0, r1, #3
+ 570:	f88d 2002 	strb.w	r2, [sp, #2]
+ 574:	f7ff fffe 	bl	0 <pletoh16>
+ 578:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 57a:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 57e:	2907      	cmp	r1, #7
+ 580:	f04f 0100 	mov.w	r1, #0
+ 584:	d306      	bcc.n	594 <zcl_color_server_handle_command+0x594>
+ 586:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 588:	7941      	ldrb	r1, [r0, #5]
+ 58a:	f88d 1006 	strb.w	r1, [sp, #6]
+ 58e:	7986      	ldrb	r6, [r0, #6]
+ 590:	f88d 6007 	strb.w	r6, [sp, #7]
+ 594:	4648      	mov	r0, r9
+ 596:	4632      	mov	r2, r6
+ 598:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 59c:	2800      	cmp	r0, #0
+ 59e:	f000 8263 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 5a2:	4648      	mov	r0, r9
+ 5a4:	2108      	movs	r1, #8
+ 5a6:	2200      	movs	r2, #0
+ 5a8:	2300      	movs	r3, #0
+ 5aa:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 5ae:	4648      	mov	r0, r9
+ 5b0:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 5b4:	2203      	movs	r2, #3
+ 5b6:	2300      	movs	r3, #0
+ 5b8:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 5bc:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 5c0:	f8d9 70b4 	ldr.w	r7, [r9, #180]	@ 0xb4
+ 5c4:	e249      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 5c6:	bf00      	nop
+ 5c8:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 5ca:	2803      	cmp	r0, #3
+ 5cc:	f0c0 81f7 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 5d0:	f8d9 00b8 	ldr.w	r0, [r9, #184]	@ 0xb8
+ 5d4:	2800      	cmp	r0, #0
+ 5d6:	f43f ad31 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 5da:	2700      	movs	r7, #0
+ 5dc:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 5de:	f8ad 7004 	strh.w	r7, [sp, #4]
+ 5e2:	9700      	str	r7, [sp, #0]
+ 5e4:	f810 6b01 	ldrb.w	r6, [r0], #1
+ 5e8:	f88d 6000 	strb.w	r6, [sp]
+ 5ec:	f7ff fffe 	bl	0 <pletoh16>
+ 5f0:	4680      	mov	r8, r0
+ 5f2:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 5f4:	2100      	movs	r1, #0
+ 5f6:	2806      	cmp	r0, #6
+ 5f8:	f8ad 8002 	strh.w	r8, [sp, #2]
+ 5fc:	d306      	bcc.n	60c <zcl_color_server_handle_command+0x60c>
+ 5fe:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 600:	7901      	ldrb	r1, [r0, #4]
+ 602:	7947      	ldrb	r7, [r0, #5]
+ 604:	f88d 1004 	strb.w	r1, [sp, #4]
+ 608:	f88d 7005 	strb.w	r7, [sp, #5]
+ 60c:	4648      	mov	r0, r9
+ 60e:	463a      	mov	r2, r7
+ 610:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 614:	2800      	cmp	r0, #0
+ 616:	f000 8227 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 61a:	f006 00fd 	and.w	r0, r6, #253	@ 0xfd
+ 61e:	2801      	cmp	r0, #1
+ 620:	bf08      	it	eq
+ 622:	f1b8 0f00 	cmpeq.w	r8, #0
+ 626:	f000 8223 	beq.w	a70 <zcl_color_server_handle_command+0xa70>
+ 62a:	4648      	mov	r0, r9
+ 62c:	2108      	movs	r1, #8
+ 62e:	2200      	movs	r2, #0
+ 630:	2300      	movs	r3, #0
+ 632:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 636:	4648      	mov	r0, r9
+ 638:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 63c:	2203      	movs	r2, #3
+ 63e:	2300      	movs	r3, #0
+ 640:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 644:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 648:	f8d9 70b8 	ldr.w	r7, [r9, #184]	@ 0xb8
+ 64c:	e205      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 64e:	bf00      	nop
+ 650:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 652:	2805      	cmp	r0, #5
+ 654:	f0c0 81b3 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 658:	f8d9 00bc 	ldr.w	r0, [r9, #188]	@ 0xbc
+ 65c:	2800      	cmp	r0, #0
+ 65e:	f43f aced 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 662:	2600      	movs	r6, #0
+ 664:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 666:	9601      	str	r6, [sp, #4]
+ 668:	9600      	str	r6, [sp, #0]
+ 66a:	f810 1b01 	ldrb.w	r1, [r0], #1
+ 66e:	f88d 1000 	strb.w	r1, [sp]
+ 672:	f7ff fffe 	bl	0 <pletoh16>
+ 676:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 678:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 67c:	1cc8      	adds	r0, r1, #3
+ 67e:	f7ff fffe 	bl	0 <pletoh16>
+ 682:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 684:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 688:	2907      	cmp	r1, #7
+ 68a:	f04f 0100 	mov.w	r1, #0
+ 68e:	d306      	bcc.n	69e <zcl_color_server_handle_command+0x69e>
+ 690:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 692:	7941      	ldrb	r1, [r0, #5]
+ 694:	f88d 1006 	strb.w	r1, [sp, #6]
+ 698:	7986      	ldrb	r6, [r0, #6]
+ 69a:	f88d 6007 	strb.w	r6, [sp, #7]
+ 69e:	4648      	mov	r0, r9
+ 6a0:	4632      	mov	r2, r6
+ 6a2:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 6a6:	2800      	cmp	r0, #0
+ 6a8:	f000 81de 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 6ac:	4648      	mov	r0, r9
+ 6ae:	2108      	movs	r1, #8
+ 6b0:	2200      	movs	r2, #0
+ 6b2:	2300      	movs	r3, #0
+ 6b4:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 6b8:	4648      	mov	r0, r9
+ 6ba:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 6be:	2203      	movs	r2, #3
+ 6c0:	2300      	movs	r3, #0
+ 6c2:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 6c6:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 6ca:	f8d9 70bc 	ldr.w	r7, [r9, #188]	@ 0xbc
+ 6ce:	e1c4      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 6d0:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 6d2:	2805      	cmp	r0, #5
+ 6d4:	f0c0 8173 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 6d8:	f8d9 00c0 	ldr.w	r0, [r9, #192]	@ 0xc0
+ 6dc:	2800      	cmp	r0, #0
+ 6de:	f43f acad 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 6e2:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 6e4:	2600      	movs	r6, #0
+ 6e6:	9601      	str	r6, [sp, #4]
+ 6e8:	9600      	str	r6, [sp, #0]
+ 6ea:	f7ff fffe 	bl	0 <pletoh16>
+ 6ee:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 6f0:	f8ad 0000 	strh.w	r0, [sp]
+ 6f4:	788a      	ldrb	r2, [r1, #2]
+ 6f6:	1cc8      	adds	r0, r1, #3
+ 6f8:	f88d 2002 	strb.w	r2, [sp, #2]
+ 6fc:	f7ff fffe 	bl	0 <pletoh16>
+ 700:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 702:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 706:	2907      	cmp	r1, #7
+ 708:	f04f 0100 	mov.w	r1, #0
+ 70c:	d306      	bcc.n	71c <zcl_color_server_handle_command+0x71c>
+ 70e:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 710:	7941      	ldrb	r1, [r0, #5]
+ 712:	f88d 1006 	strb.w	r1, [sp, #6]
+ 716:	7986      	ldrb	r6, [r0, #6]
+ 718:	f88d 6007 	strb.w	r6, [sp, #7]
+ 71c:	4648      	mov	r0, r9
+ 71e:	4632      	mov	r2, r6
+ 720:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 724:	2800      	cmp	r0, #0
+ 726:	f000 819f 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 72a:	4648      	mov	r0, r9
+ 72c:	2108      	movs	r1, #8
+ 72e:	2200      	movs	r2, #0
+ 730:	2300      	movs	r3, #0
+ 732:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 736:	4648      	mov	r0, r9
+ 738:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 73c:	2203      	movs	r2, #3
+ 73e:	2300      	movs	r3, #0
+ 740:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 744:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 748:	f8d9 70c0 	ldr.w	r7, [r9, #192]	@ 0xc0
+ 74c:	e185      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 74e:	bf00      	nop
+ 750:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 752:	2809      	cmp	r0, #9
+ 754:	f0c0 8133 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 758:	f8d9 00d0 	ldr.w	r0, [r9, #208]	@ 0xd0
+ 75c:	2800      	cmp	r0, #0
+ 75e:	f43f ac6d 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 762:	2600      	movs	r6, #0
+ 764:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 766:	e9cd 6601 	strd	r6, r6, [sp, #4]
+ 76a:	9600      	str	r6, [sp, #0]
+ 76c:	f810 1b01 	ldrb.w	r1, [r0], #1
+ 770:	f88d 1000 	strb.w	r1, [sp]
+ 774:	f7ff fffe 	bl	0 <pletoh16>
+ 778:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 77a:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 77e:	1cc8      	adds	r0, r1, #3
+ 780:	f7ff fffe 	bl	0 <pletoh16>
+ 784:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 786:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 78a:	1d48      	adds	r0, r1, #5
+ 78c:	f7ff fffe 	bl	0 <pletoh16>
+ 790:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 792:	f8ad 0006 	strh.w	r0, [sp, #6]
+ 796:	1dc8      	adds	r0, r1, #7
+ 798:	f7ff fffe 	bl	0 <pletoh16>
+ 79c:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 79e:	f8ad 0008 	strh.w	r0, [sp, #8]
+ 7a2:	290b      	cmp	r1, #11
+ 7a4:	f04f 0100 	mov.w	r1, #0
+ 7a8:	d306      	bcc.n	7b8 <zcl_color_server_handle_command+0x7b8>
+ 7aa:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 7ac:	7a41      	ldrb	r1, [r0, #9]
+ 7ae:	f88d 100a 	strb.w	r1, [sp, #10]
+ 7b2:	7a86      	ldrb	r6, [r0, #10]
+ 7b4:	f88d 600b 	strb.w	r6, [sp, #11]
+ 7b8:	4648      	mov	r0, r9
+ 7ba:	4632      	mov	r2, r6
+ 7bc:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 7c0:	2800      	cmp	r0, #0
+ 7c2:	f000 8151 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 7c6:	4648      	mov	r0, r9
+ 7c8:	2108      	movs	r1, #8
+ 7ca:	2202      	movs	r2, #2
+ 7cc:	2300      	movs	r3, #0
+ 7ce:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 7d2:	4648      	mov	r0, r9
+ 7d4:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 7d8:	2202      	movs	r2, #2
+ 7da:	2300      	movs	r3, #0
+ 7dc:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 7e0:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 7e4:	f8d9 70d0 	ldr.w	r7, [r9, #208]	@ 0xd0
+ 7e8:	4669      	mov	r1, sp
+ 7ea:	aa04      	add	r2, sp, #16
+ 7ec:	4648      	mov	r0, r9
+ 7ee:	47b8      	blx	r7
+ 7f0:	b00d      	add	sp, #52	@ 0x34
+ 7f2:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+ 7f6:	bf00      	nop
+ 7f8:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 7fa:	2804      	cmp	r0, #4
+ 7fc:	f0c0 80df 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 800:	f8d9 00a8 	ldr.w	r0, [r9, #168]	@ 0xa8
+ 804:	2800      	cmp	r0, #0
+ 806:	f43f ac19 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 80a:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 80c:	2700      	movs	r7, #0
+ 80e:	f8ad 7004 	strh.w	r7, [sp, #4]
+ 812:	f7ff fffe 	bl	0 <pletoh16>
+ 816:	4680      	mov	r8, r0
+ 818:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 81a:	f8ad 8000 	strh.w	r8, [sp]
+ 81e:	3002      	adds	r0, #2
+ 820:	f7ff fffe 	bl	0 <pletoh16>
+ 824:	4606      	mov	r6, r0
+ 826:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 828:	2100      	movs	r1, #0
+ 82a:	2806      	cmp	r0, #6
+ 82c:	f8ad 6002 	strh.w	r6, [sp, #2]
+ 830:	d306      	bcc.n	840 <zcl_color_server_handle_command+0x840>
+ 832:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 834:	7901      	ldrb	r1, [r0, #4]
+ 836:	7947      	ldrb	r7, [r0, #5]
+ 838:	f88d 1004 	strb.w	r1, [sp, #4]
+ 83c:	f88d 7005 	strb.w	r7, [sp, #5]
+ 840:	4648      	mov	r0, r9
+ 842:	463a      	mov	r2, r7
+ 844:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 848:	2800      	cmp	r0, #0
+ 84a:	bf18      	it	ne
+ 84c:	ea58 0006 	orrsne.w	r0, r8, r6
+ 850:	f000 810a 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 854:	4648      	mov	r0, r9
+ 856:	2108      	movs	r1, #8
+ 858:	2201      	movs	r2, #1
+ 85a:	2300      	movs	r3, #0
+ 85c:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 860:	4648      	mov	r0, r9
+ 862:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 866:	2201      	movs	r2, #1
+ 868:	2300      	movs	r3, #0
+ 86a:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 86e:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 872:	f8d9 70a8 	ldr.w	r7, [r9, #168]	@ 0xa8
+ 876:	e0f0      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 878:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 87a:	2806      	cmp	r0, #6
+ 87c:	f0c0 809f 	bcc.w	9be <zcl_color_server_handle_command+0x9be>
+ 880:	f8d9 00ac 	ldr.w	r0, [r9, #172]	@ 0xac
+ 884:	2800      	cmp	r0, #0
+ 886:	f43f abd9 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 88a:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 88c:	2600      	movs	r6, #0
+ 88e:	9601      	str	r6, [sp, #4]
+ 890:	9600      	str	r6, [sp, #0]
+ 892:	f7ff fffe 	bl	0 <pletoh16>
+ 896:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 898:	f8ad 0000 	strh.w	r0, [sp]
+ 89c:	1c88      	adds	r0, r1, #2
+ 89e:	f7ff fffe 	bl	0 <pletoh16>
+ 8a2:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 8a4:	f8ad 0002 	strh.w	r0, [sp, #2]
+ 8a8:	1d08      	adds	r0, r1, #4
+ 8aa:	f7ff fffe 	bl	0 <pletoh16>
+ 8ae:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 8b0:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 8b4:	2908      	cmp	r1, #8
+ 8b6:	f04f 0100 	mov.w	r1, #0
+ 8ba:	d306      	bcc.n	8ca <zcl_color_server_handle_command+0x8ca>
+ 8bc:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 8be:	7981      	ldrb	r1, [r0, #6]
+ 8c0:	79c6      	ldrb	r6, [r0, #7]
+ 8c2:	f88d 1006 	strb.w	r1, [sp, #6]
+ 8c6:	f88d 6007 	strb.w	r6, [sp, #7]
+ 8ca:	4648      	mov	r0, r9
+ 8cc:	4632      	mov	r2, r6
+ 8ce:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 8d2:	2800      	cmp	r0, #0
+ 8d4:	f000 80c8 	beq.w	a68 <zcl_color_server_handle_command+0xa68>
+ 8d8:	4648      	mov	r0, r9
+ 8da:	2108      	movs	r1, #8
+ 8dc:	2201      	movs	r2, #1
+ 8de:	2300      	movs	r3, #0
+ 8e0:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 8e4:	4648      	mov	r0, r9
+ 8e6:	f244 0101 	movw	r1, #16385	@ 0x4001
+ 8ea:	2201      	movs	r2, #1
+ 8ec:	2300      	movs	r3, #0
+ 8ee:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ 8f2:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 8f6:	f8d9 70ac 	ldr.w	r7, [r9, #172]	@ 0xac
+ 8fa:	e0ae      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 8fc:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 8fe:	2807      	cmp	r0, #7
+ 900:	d35d      	bcc.n	9be <zcl_color_server_handle_command+0x9be>
+ 902:	f8d9 00c4 	ldr.w	r0, [r9, #196]	@ 0xc4
+ 906:	2800      	cmp	r0, #0
+ 908:	f43f ab98 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 90c:	2600      	movs	r6, #0
+ 90e:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 910:	f8ad 6008 	strh.w	r6, [sp, #8]
+ 914:	f8ad 6006 	strh.w	r6, [sp, #6]
+ 918:	f8ad 6004 	strh.w	r6, [sp, #4]
+ 91c:	f8ad 6002 	strh.w	r6, [sp, #2]
+ 920:	f810 1b03 	ldrb.w	r1, [r0], #3
+ 924:	f88d 1000 	strb.w	r1, [sp]
+ 928:	f810 2c02 	ldrb.w	r2, [r0, #-2]
+ 92c:	f810 3c01 	ldrb.w	r3, [r0, #-1]
+ 930:	f88d 2001 	strb.w	r2, [sp, #1]
+ 934:	f88d 3002 	strb.w	r3, [sp, #2]
+ 938:	f7ff fffe 	bl	0 <pletoh16>
+ 93c:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 93e:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 942:	1d48      	adds	r0, r1, #5
+ 944:	f7ff fffe 	bl	0 <pletoh16>
+ 948:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ 94a:	f8ad 0006 	strh.w	r0, [sp, #6]
+ 94e:	2909      	cmp	r1, #9
+ 950:	f04f 0100 	mov.w	r1, #0
+ 954:	d306      	bcc.n	964 <zcl_color_server_handle_command+0x964>
+ 956:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 958:	79c1      	ldrb	r1, [r0, #7]
+ 95a:	f88d 1008 	strb.w	r1, [sp, #8]
+ 95e:	7a06      	ldrb	r6, [r0, #8]
+ 960:	f88d 6009 	strb.w	r6, [sp, #9]
+ 964:	4648      	mov	r0, r9
+ 966:	4632      	mov	r2, r6
+ 968:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 96c:	2800      	cmp	r0, #0
+ 96e:	d07b      	beq.n	a68 <zcl_color_server_handle_command+0xa68>
+ 970:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 974:	f8d9 70c4 	ldr.w	r7, [r9, #196]	@ 0xc4
+ 978:	e06f      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 97a:	bf00      	nop
+ 97c:	f8d9 00c8 	ldr.w	r0, [r9, #200]	@ 0xc8
+ 980:	2800      	cmp	r0, #0
+ 982:	f43f ab5b 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 986:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 988:	2200      	movs	r2, #0
+ 98a:	2802      	cmp	r0, #2
+ 98c:	f04f 0100 	mov.w	r1, #0
+ 990:	f8ad 2000 	strh.w	r2, [sp]
+ 994:	d306      	bcc.n	9a4 <zcl_color_server_handle_command+0x9a4>
+ 996:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 998:	7801      	ldrb	r1, [r0, #0]
+ 99a:	7842      	ldrb	r2, [r0, #1]
+ 99c:	f88d 1000 	strb.w	r1, [sp]
+ 9a0:	f88d 2001 	strb.w	r2, [sp, #1]
+ 9a4:	4648      	mov	r0, r9
+ 9a6:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ 9aa:	2800      	cmp	r0, #0
+ 9ac:	d05c      	beq.n	a68 <zcl_color_server_handle_command+0xa68>
+ 9ae:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ 9b2:	f8d9 70c8 	ldr.w	r7, [r9, #200]	@ 0xc8
+ 9b6:	e050      	b.n	a5a <zcl_color_server_handle_command+0xa5a>
+ 9b8:	8f28      	ldrh	r0, [r5, #56]	@ 0x38
+ 9ba:	2807      	cmp	r0, #7
+ 9bc:	d204      	bcs.n	9c8 <zcl_color_server_handle_command+0x9c8>
+ 9be:	2080      	movs	r0, #128	@ 0x80
+ 9c0:	b00d      	add	sp, #52	@ 0x34
+ 9c2:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+ 9c6:	bf00      	nop
+ 9c8:	f8d9 00cc 	ldr.w	r0, [r9, #204]	@ 0xcc
+ 9cc:	2800      	cmp	r0, #0
+ 9ce:	f43f ab35 	beq.w	3c <zcl_color_server_handle_command+0x3c>
+ 9d2:	2700      	movs	r7, #0
+ 9d4:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 9d6:	f8ad 7008 	strh.w	r7, [sp, #8]
+ 9da:	9701      	str	r7, [sp, #4]
+ 9dc:	9700      	str	r7, [sp, #0]
+ 9de:	f810 6b01 	ldrb.w	r6, [r0], #1
+ 9e2:	f88d 6000 	strb.w	r6, [sp]
+ 9e6:	f7ff fffe 	bl	0 <pletoh16>
+ 9ea:	4680      	mov	r8, r0
+ 9ec:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ 9ee:	f8ad 8002 	strh.w	r8, [sp, #2]
+ 9f2:	3003      	adds	r0, #3
+ 9f4:	f7ff fffe 	bl	0 <pletoh16>
+ 9f8:	6b69      	ldr	r1, [r5, #52]	@ 0x34
+ 9fa:	f8ad 0004 	strh.w	r0, [sp, #4]
+ 9fe:	1d48      	adds	r0, r1, #5
+ a00:	f7ff fffe 	bl	0 <pletoh16>
+ a04:	8f29      	ldrh	r1, [r5, #56]	@ 0x38
+ a06:	f8ad 0006 	strh.w	r0, [sp, #6]
+ a0a:	2909      	cmp	r1, #9
+ a0c:	f04f 0100 	mov.w	r1, #0
+ a10:	d306      	bcc.n	a20 <zcl_color_server_handle_command+0xa20>
+ a12:	6b68      	ldr	r0, [r5, #52]	@ 0x34
+ a14:	79c1      	ldrb	r1, [r0, #7]
+ a16:	f88d 1008 	strb.w	r1, [sp, #8]
+ a1a:	7a07      	ldrb	r7, [r0, #8]
+ a1c:	f88d 7009 	strb.w	r7, [sp, #9]
+ a20:	4648      	mov	r0, r9
+ a22:	463a      	mov	r2, r7
+ a24:	f7ff fffe 	bl	0 <zcl_color_server_handle_command>
+ a28:	b1f0      	cbz	r0, a68 <zcl_color_server_handle_command+0xa68>
+ a2a:	f006 00fd 	and.w	r0, r6, #253	@ 0xfd
+ a2e:	2801      	cmp	r0, #1
+ a30:	bf08      	it	eq
+ a32:	f1b8 0f00 	cmpeq.w	r8, #0
+ a36:	d01b      	beq.n	a70 <zcl_color_server_handle_command+0xa70>
+ a38:	4648      	mov	r0, r9
+ a3a:	2108      	movs	r1, #8
+ a3c:	2202      	movs	r2, #2
+ a3e:	2300      	movs	r3, #0
+ a40:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ a44:	4648      	mov	r0, r9
+ a46:	f244 0101 	movw	r1, #16385	@ 0x4001
+ a4a:	2202      	movs	r2, #2
+ a4c:	2300      	movs	r3, #0
+ a4e:	f7ff fffe 	bl	0 <ZbZclAttrIntegerWrite>
+ a52:	f8d9 3064 	ldr.w	r3, [r9, #100]	@ 0x64
+ a56:	f8d9 70cc 	ldr.w	r7, [r9, #204]	@ 0xcc
+ a5a:	4669      	mov	r1, sp
+ a5c:	aa04      	add	r2, sp, #16
+ a5e:	4648      	mov	r0, r9
+ a60:	47b8      	blx	r7
+ a62:	b00d      	add	sp, #52	@ 0x34
+ a64:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+ a68:	2000      	movs	r0, #0
+ a6a:	b00d      	add	sp, #52	@ 0x34
+ a6c:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+ a70:	2085      	movs	r0, #133	@ 0x85
+ a72:	b00d      	add	sp, #52	@ 0x34
+ a74:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+
+Disassembly of section .text.zcl_color_options_cmd_allow:
+
+00000000 <zcl_color_options_cmd_allow>:
+   0:	b5f0      	push	{r4, r5, r6, r7, lr}
+   2:	b083      	sub	sp, #12
+   4:	4604      	mov	r4, r0
+   6:	2001      	movs	r0, #1
+   8:	4615      	mov	r5, r2
+   a:	460e      	mov	r6, r1
+   c:	2700      	movs	r7, #0
+   e:	9000      	str	r0, [sp, #0]
+  10:	f10d 030b 	add.w	r3, sp, #11
+  14:	4620      	mov	r0, r4
+  16:	210f      	movs	r1, #15
+  18:	2200      	movs	r2, #0
+  1a:	9701      	str	r7, [sp, #4]
+  1c:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+  20:	b110      	cbz	r0, 28 <zcl_color_options_cmd_allow+0x28>
+  22:	4638      	mov	r0, r7
+  24:	b003      	add	sp, #12
+  26:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  28:	f89d 000b 	ldrb.w	r0, [sp, #11]
+  2c:	07f1      	lsls	r1, r6, #31
+  2e:	d113      	bne.n	58 <zcl_color_options_cmd_allow+0x58>
+  30:	07b1      	lsls	r1, r6, #30
+  32:	d41b      	bmi.n	6c <zcl_color_options_cmd_allow+0x6c>
+  34:	0771      	lsls	r1, r6, #29
+  36:	d423      	bmi.n	80 <zcl_color_options_cmd_allow+0x80>
+  38:	0731      	lsls	r1, r6, #28
+  3a:	d42b      	bmi.n	94 <zcl_color_options_cmd_allow+0x94>
+  3c:	06f1      	lsls	r1, r6, #27
+  3e:	d433      	bmi.n	a8 <zcl_color_options_cmd_allow+0xa8>
+  40:	06b1      	lsls	r1, r6, #26
+  42:	d43b      	bmi.n	bc <zcl_color_options_cmd_allow+0xbc>
+  44:	0671      	lsls	r1, r6, #25
+  46:	d443      	bmi.n	d0 <zcl_color_options_cmd_allow+0xd0>
+  48:	b271      	sxtb	r1, r6
+  4a:	f1b1 3fff 	cmp.w	r1, #4294967295
+  4e:	dd4b      	ble.n	e8 <zcl_color_options_cmd_allow+0xe8>
+  50:	07c0      	lsls	r0, r0, #31
+  52:	d16d      	bne.n	130 <zcl_color_options_cmd_allow+0x130>
+  54:	e054      	b.n	100 <zcl_color_options_cmd_allow+0x100>
+  56:	bf00      	nop
+  58:	07e9      	lsls	r1, r5, #31
+  5a:	bf14      	ite	ne
+  5c:	f040 0001 	orrne.w	r0, r0, #1
+  60:	f000 00fe 	andeq.w	r0, r0, #254	@ 0xfe
+  64:	f88d 000b 	strb.w	r0, [sp, #11]
+  68:	07b1      	lsls	r1, r6, #30
+  6a:	d5e3      	bpl.n	34 <zcl_color_options_cmd_allow+0x34>
+  6c:	07a9      	lsls	r1, r5, #30
+  6e:	bf54      	ite	pl
+  70:	f000 00fd 	andpl.w	r0, r0, #253	@ 0xfd
+  74:	f040 0002 	orrmi.w	r0, r0, #2
+  78:	f88d 000b 	strb.w	r0, [sp, #11]
+  7c:	0771      	lsls	r1, r6, #29
+  7e:	d5db      	bpl.n	38 <zcl_color_options_cmd_allow+0x38>
+  80:	0769      	lsls	r1, r5, #29
+  82:	bf54      	ite	pl
+  84:	f000 00fb 	andpl.w	r0, r0, #251	@ 0xfb
+  88:	f040 0004 	orrmi.w	r0, r0, #4
+  8c:	f88d 000b 	strb.w	r0, [sp, #11]
+  90:	0731      	lsls	r1, r6, #28
+  92:	d5d3      	bpl.n	3c <zcl_color_options_cmd_allow+0x3c>
+  94:	0729      	lsls	r1, r5, #28
+  96:	bf54      	ite	pl
+  98:	f000 00f7 	andpl.w	r0, r0, #247	@ 0xf7
+  9c:	f040 0008 	orrmi.w	r0, r0, #8
+  a0:	f88d 000b 	strb.w	r0, [sp, #11]
+  a4:	06f1      	lsls	r1, r6, #27
+  a6:	d5cb      	bpl.n	40 <zcl_color_options_cmd_allow+0x40>
+  a8:	06e9      	lsls	r1, r5, #27
+  aa:	bf54      	ite	pl
+  ac:	f000 00ef 	andpl.w	r0, r0, #239	@ 0xef
+  b0:	f040 0010 	orrmi.w	r0, r0, #16
+  b4:	f88d 000b 	strb.w	r0, [sp, #11]
+  b8:	06b1      	lsls	r1, r6, #26
+  ba:	d5c3      	bpl.n	44 <zcl_color_options_cmd_allow+0x44>
+  bc:	06a9      	lsls	r1, r5, #26
+  be:	bf54      	ite	pl
+  c0:	f000 00df 	andpl.w	r0, r0, #223	@ 0xdf
+  c4:	f040 0020 	orrmi.w	r0, r0, #32
+  c8:	f88d 000b 	strb.w	r0, [sp, #11]
+  cc:	0671      	lsls	r1, r6, #25
+  ce:	d5bb      	bpl.n	48 <zcl_color_options_cmd_allow+0x48>
+  d0:	0669      	lsls	r1, r5, #25
+  d2:	bf54      	ite	pl
+  d4:	f000 00bf 	andpl.w	r0, r0, #191	@ 0xbf
+  d8:	f040 0040 	orrmi.w	r0, r0, #64	@ 0x40
+  dc:	f88d 000b 	strb.w	r0, [sp, #11]
+  e0:	b271      	sxtb	r1, r6
+  e2:	f1b1 3fff 	cmp.w	r1, #4294967295
+  e6:	dcb3      	bgt.n	50 <zcl_color_options_cmd_allow+0x50>
+  e8:	b269      	sxtb	r1, r5
+  ea:	f1b1 3fff 	cmp.w	r1, #4294967295
+  ee:	bfcc      	ite	gt
+  f0:	f000 007f 	andgt.w	r0, r0, #127	@ 0x7f
+  f4:	f040 0080 	orrle.w	r0, r0, #128	@ 0x80
+  f8:	f88d 000b 	strb.w	r0, [sp, #11]
+  fc:	07c0      	lsls	r0, r0, #31
+  fe:	d117      	bne.n	130 <zcl_color_options_cmd_allow+0x130>
+ 100:	f8d4 0084 	ldr.w	r0, [r4, #132]	@ 0x84
+ 104:	b1a0      	cbz	r0, 130 <zcl_color_options_cmd_allow+0x130>
+ 106:	2101      	movs	r1, #1
+ 108:	2700      	movs	r7, #0
+ 10a:	9100      	str	r1, [sp, #0]
+ 10c:	f10d 030a 	add.w	r3, sp, #10
+ 110:	2100      	movs	r1, #0
+ 112:	2200      	movs	r2, #0
+ 114:	9701      	str	r7, [sp, #4]
+ 116:	f7ff fffe 	bl	0 <ZbZclAttrRead>
+ 11a:	2800      	cmp	r0, #0
+ 11c:	f47f af81 	bne.w	22 <zcl_color_options_cmd_allow+0x22>
+ 120:	f89d 000a 	ldrb.w	r0, [sp, #10]
+ 124:	2800      	cmp	r0, #0
+ 126:	bf18      	it	ne
+ 128:	2701      	movne	r7, #1
+ 12a:	4638      	mov	r0, r7
+ 12c:	b003      	add	sp, #12
+ 12e:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 130:	2701      	movs	r7, #1
+ 132:	4638      	mov	r0, r7
+ 134:	b003      	add	sp, #12
+ 136:	bdf0      	pop	{r4, r5, r6, r7, pc}

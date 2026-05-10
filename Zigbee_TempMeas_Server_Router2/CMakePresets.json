@@ -1,0 +1,57 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "cmake/gcc-arm-none-eabi.cmake",
+            "cacheVariables": {
+                "CMSIS_Dvendor": "STMicroelectronics:13",
+                "CMSIS_Dname": "STM32WBA52CGU7",
+                "CMSIS_Dcore": "Cortex-M33",
+                "CMSIS_Dtz": "TZ",
+                "CMSIS_Dfpu": "SP_FPU",
+                "CMSIS_Ddsp": "DSP",
+                "CMSIS_Dmve": "NO_MVE",
+                "CMSIS_Dmpu": "MPU",
+                "CMSIS_Dendian": "Little-endian",
+                "CMSIS_Dsecure": "",
+                "CMSIS_Tcompiler": "GCC"
+            }
+        },
+        {
+            "name": "Debug",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CUBE_CMAKE_C_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-std=gnu11;-g3;-DSTM32;-DSTM32WBA;-DSTM32WBA55xx;-DSTM32WBA55CGUx;-DUSE_HAL_DRIVER;-DUSE_FULL_ASSERT;-DUSE_FULL_LL_DRIVER;-DMAC;-DMAC_LAYER;-DAPPLICATION_USE_BAREMETAL;-DAPPLICATION_USE_NUCLEO;-DAPPLICATION_USE_HW_AES;-DAPPLICATION_USE_HW_RNG;-O3;-ffunction-sections;-fdata-sections;-Wall;-fstack-usage;-fcyclomatic-complexity",
+                "CUBE_CMAKE_CXX_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-std=gnu++14;-g3;-O0;-ffunction-sections;-fdata-sections;-fno-exceptions;-fno-rtti;-fno-use-cxa-atexit;-Wall;-fstack-usage;-fcyclomatic-complexity",
+                "CUBE_CMAKE_ASM_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-g3;-DDEBUG;-DGenericAssemblerDefine;-x;assembler-with-cpp",
+                "CUBE_CMAKE_EXE_LINKER_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-TSTM32WBA55CGUX_FLASH.ld;--specs=nosys.specs;-Wl,-Map=Zigbee_TempMeas_Server_Router.map;-Wl,--gc-sections;-static;-z;noexecstack"
+            }
+        },
+        {
+            "name": "Release",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CUBE_CMAKE_C_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-std=gnu11;-DSTM32;-DSTM32WBA;-DSTM32WBA55xx;-DSTM32WBA55CGUx;-DUSE_HAL_DRIVER;-DUSE_FULL_ASSERT;-DUSE_FULL_LL_DRIVER;-DMAC;-DMAC_LAYER;-DAPPLICATION_USE_BAREMETAL;-DAPPLICATION_USE_NUCLEO;-DAPPLICATION_USE_HW_AES;-DAPPLICATION_USE_HW_RNG;-O3;-ffunction-sections;-fdata-sections;-Wall;-fstack-usage;-fcyclomatic-complexity",
+                "CUBE_CMAKE_CXX_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-std=gnu++14;-Os;-ffunction-sections;-fdata-sections;-fno-exceptions;-fno-rtti;-fno-use-cxa-atexit;-Wall;-fstack-usage;-fcyclomatic-complexity",
+                "CUBE_CMAKE_ASM_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-DGenericAssemblerDefine;-x;assembler-with-cpp",
+                "CUBE_CMAKE_EXE_LINKER_FLAGS": "-mfpu=fpv5-sp-d16;-mfloat-abi=hard;-mthumb;--specs=nano.specs;-u _printf_float;-mcpu=cortex-m33;-TSTM32WBA55CGUX_FLASH.ld;--specs=nosys.specs;-Wl,-Map=Zigbee_TempMeas_Server_Router.map;-Wl,--gc-sections;-static;-z;noexecstack"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug",
+            "configurePreset": "Debug"
+        },
+        {
+            "name": "Release",
+            "configurePreset": "Release"
+        }
+    ]
+}

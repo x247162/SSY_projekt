@@ -1,0 +1,9 @@
+{
+  "source": {
+    "sourceType": "STM32CubeIDE"
+  },
+  "device": "STM32WBA52CGU7",
+  "core": "Cortex-M33",
+  "order": 0,
+  "toolchain": "GCC"
+}

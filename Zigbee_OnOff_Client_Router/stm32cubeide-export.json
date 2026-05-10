@@ -1,0 +1,1153 @@
+{
+  "name": "Zigbee_OnOff_Client_Router",
+  "source_ide": "STM32CubeIDE",
+  "path": "c:/Users/jirik/OneDrive - VUT/5 SSY/projekt/Zigbee_OnOff_Client_Router/STM32CubeIDE",
+  "languages": [
+      "C"
+  ],
+  "configurations": [
+    {
+      "name": "Debug",
+      "output_filename": "Zigbee_OnOff_Client_Router",
+      "type": "Executable",
+      "toolchain_type": "GCC",
+      "toolchain_prefix": "arm-none-eabi-",
+      "mcu": "STM32WBA52CGUx",
+      "board": "NUCLEO-WBA52CG",
+      "sources": [
+        { "path": "../Core/Src/app_entry.c" },
+
+        { "path": "../Core/Src/main.c" },
+
+        { "path": "../Core/Src/stm32wbaxx_hal_msp.c" },
+
+        { "path": "../Core/Src/stm32wbaxx_it.c" },
+
+        { "path": "Application/User/Core/syscalls.c" },
+
+        { "path": "Application/User/Core/sysmem.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee_endpoint.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee_utility.c" },
+
+        { "path": "../STM32_WPAN/Target/linklayer_plat.c" },
+
+        { "path": "../STM32_WPAN/Target/ll_sys_if.c" },
+
+        { "path": "../STM32_WPAN/Target/mac_sys_if.c" },
+
+        { "path": "../STM32_WPAN/Target/power_table.c" },
+
+        { "path": "../STM32_WPAN/Target/zigbee_plat.c" },
+
+        { "path": "../STM32_WPAN/Target/zigbee_sys_if.c" },
+
+        { "path": "Application/User/Startup/startup_stm32wba55cgux.s" },
+
+        { "path": "../System/Config/CRC_Ctrl/crc_ctrl_conf.c" },
+
+        { "path": "../System/Config/Debug_GPIO/app_debug.c" },
+
+        { "path": "../System/Config/LowPower/peripheral_init.c" },
+
+        { "path": "../System/Config/LowPower/user_low_power_config.c" },
+
+        { "path": "../System/Interfaces/stm32_lpm_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/app_bsp.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/hw_aes.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/hw_rng.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/timer_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_ccm.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_cmac.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_ecb.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/Log/log_module.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RFControl/rf_antenna_switch.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RTDebug/RTDebug.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RTDebug/RTDebug_dtb.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/SerialCmdInterpreter/serial_cmd_interpreter.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/app_sys.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/crc_ctrl.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/otp.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/scm.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/stm_list.c" },
+
+        { "path": "../Projects/Common/WPAN/Startup/stm32wbaxx_ResetHandler_GCC.s" },
+
+        { "path": "../readme.md" },
+
+        { "path": "../Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c" },
+
+        { "path": "../Core/Src/system_stm32wbaxx.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_adc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_adc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_comp.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cortex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_crc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_crc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cryp.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cryp_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_dma.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_dma_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_exti.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_gpio.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_gtzc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_hash.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_hsem.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_i2c.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_i2c_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_icache.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_irda.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_iwdg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_lptim.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pka.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pwr.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pwr_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_ramcfg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rcc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rcc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rng.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rng_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rtc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rtc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_sai.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_sai_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smartcard.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smartcard_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smbus.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smbus_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_spi.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_spi_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tim.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tim_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tsc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_uart.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_uart_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_usart.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_usart_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_wwdg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_ll_rcc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_ll_tim.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_cs.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_dp_slp.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_intf.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_startup.c" },
+
+        { "path": "../Utilities/trace/adv_trace/stm32_adv_trace.c" },
+
+        { "path": "../Utilities/lpm/tiny_lpm/stm32_lpm.c" },
+
+        { "path": "../Utilities/misc/stm32_mem.c" },
+
+        { "path": "../Utilities/sequencer/stm32_seq.c" },
+
+        { "path": "../Utilities/tim_serv/stm32_timer.c" },
+
+        { "path": "../Utilities/misc/stm32_tiny_vsnprintf.c" }
+      ],
+      "tools": [
+            {
+              "type": "c_assembler",
+              "options": {
+                      "option.debuglevel": "-g3"                   
+,                      "option.definedsymbols": "-DDEBUG, -DGenericAssemblerDefine"                   
+,                      "option.preprocessassembler": "-x assembler-with-cpp"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-g3",
+
+                  "-DDEBUG",
+
+                  "-DGenericAssemblerDefine",
+
+                  "-x",
+
+                  "assembler-with-cpp"
+              ]
+            }
+,            {
+              "type": "c_compiler",
+              "options": {
+                      "option.languagestandard": "-std=gnu11"                   
+,                      "option.debuglevel": "-g3"                   
+,                      "option.definedsymbols": "-DSTM32, -DSTM32WBA, -DSTM32WBA55xx, -DSTM32WBA55CGUx, -DUSE_HAL_DRIVER, -DUSE_FULL_ASSERT, -DUSE_FULL_LL_DRIVER, -DMAC, -DMAC_LAYER, -DAPPLICATION_USE_BAREMETAL, -DAPPLICATION_USE_NUCLEO, -DAPPLICATION_USE_HW_AES, -DAPPLICATION_USE_HW_RNG"                   
+,                      "option.includepaths": "-I../../Core/Inc, -I../../STM32_WPAN/App, -I../../STM32_WPAN/Target, -I../../System/Config/CRC_Ctrl, -I../../System/Config/Debug_GPIO, -I../../System/Config, -I../../System/Config/Log, -I../../System/Config/LowPower, -I../../System/Interfaces, -I../../Projects/Common/WPAN/Interfaces, -I../../Projects/Common/WPAN/Modules, -I../../Projects/Common/WPAN/Modules/BasicAES, -I../../Projects/Common/WPAN/Modules/Flash, -I../../Projects/Common/WPAN/Modules/Log, -I../../Projects/Common/WPAN/Modules/MemoryManager, -I../../Projects/Common/WPAN/Modules/RTDebug, -I../../Projects/Common/WPAN/Modules/SerialCmdInterpreter, -I../../Drivers/CMSIS/Include, -I../../Drivers/CMSIS/Device/ST/STM32WBAxx/Include, -I../../Drivers/STM32WBAxx_HAL_Driver/Inc, -I../../Drivers/BSP/Components/Common, -I../../Drivers/BSP/STM32WBAxx_Nucleo, -I../../Middlewares/ST/STM32_WPAN, -I../../Middlewares/ST/STM32_WPAN/zigbee/include, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/include, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/stm32wba, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/mac, -I../../Middlewares/ST/STM32_WPAN/mac_802_15_4/core/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/config/ieee_15_4_basic, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc/ot_inc, -I../../Middlewares/ST/STM32_WPAN/utilities, -I../../Middlewares/ST/STM32_WPAN/interface, -I../../Utilities/conf, -I../../Utilities/lpm/tiny_lpm, -I../../Utilities/misc, -I../../Utilities/sequencer, -I../../Utilities/tim_serv, -I../../Utilities/trace/adv_trace"                   
+,                      "option.optimization.level": "-O3"                   
+,                      "option.ffunction": "-ffunction-sections"                   
+,                      "option.fdata": "-fdata-sections"                   
+,                      "option.warnings.all": "-Wall"                   
+,                      "option.fstackusage": "-fstack-usage"                   
+,                      "option.cyclomaticcomplexity": "-fcyclomatic-complexity"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-std=gnu11",
+
+                  "-g3",
+
+                  "-DSTM32",
+
+                  "-DSTM32WBA",
+
+                  "-DSTM32WBA55xx",
+
+                  "-DSTM32WBA55CGUx",
+
+                  "-DUSE_HAL_DRIVER",
+
+                  "-DUSE_FULL_ASSERT",
+
+                  "-DUSE_FULL_LL_DRIVER",
+
+                  "-DMAC",
+
+                  "-DMAC_LAYER",
+
+                  "-DAPPLICATION_USE_BAREMETAL",
+
+                  "-DAPPLICATION_USE_NUCLEO",
+
+                  "-DAPPLICATION_USE_HW_AES",
+
+                  "-DAPPLICATION_USE_HW_RNG",
+
+                  "-I../../Core/Inc",
+
+                  "-I../../STM32_WPAN/App",
+
+                  "-I../../STM32_WPAN/Target",
+
+                  "-I../../System/Config/CRC_Ctrl",
+
+                  "-I../../System/Config/Debug_GPIO",
+
+                  "-I../../System/Config",
+
+                  "-I../../System/Config/Log",
+
+                  "-I../../System/Config/LowPower",
+
+                  "-I../../System/Interfaces",
+
+                  "-I../../Projects/Common/WPAN/Interfaces",
+
+                  "-I../../Projects/Common/WPAN/Modules",
+
+                  "-I../../Projects/Common/WPAN/Modules/BasicAES",
+
+                  "-I../../Projects/Common/WPAN/Modules/Flash",
+
+                  "-I../../Projects/Common/WPAN/Modules/Log",
+
+                  "-I../../Projects/Common/WPAN/Modules/MemoryManager",
+
+                  "-I../../Projects/Common/WPAN/Modules/RTDebug",
+
+                  "-I../../Projects/Common/WPAN/Modules/SerialCmdInterpreter",
+
+                  "-I../../Drivers/CMSIS/Include",
+
+                  "-I../../Drivers/CMSIS/Device/ST/STM32WBAxx/Include",
+
+                  "-I../../Drivers/STM32WBAxx_HAL_Driver/Inc",
+
+                  "-I../../Drivers/BSP/Components/Common",
+
+                  "-I../../Drivers/BSP/STM32WBAxx_Nucleo",
+
+                  "-I../../Middlewares/ST/STM32_WPAN",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/include",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/include",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/stm32wba",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/mac",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/mac_802_15_4/core/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/config/ieee_15_4_basic",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc/ot_inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/utilities",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/interface",
+
+                  "-I../../Utilities/conf",
+
+                  "-I../../Utilities/lpm/tiny_lpm",
+
+                  "-I../../Utilities/misc",
+
+                  "-I../../Utilities/sequencer",
+
+                  "-I../../Utilities/tim_serv",
+
+                  "-I../../Utilities/trace/adv_trace",
+
+                  "-O3",
+
+                  "-ffunction-sections",
+
+                  "-fdata-sections",
+
+                  "-Wall",
+
+                  "-fstack-usage",
+
+                  "-fcyclomatic-complexity"
+              ]
+            }
+,            {
+              "type": "cpp_compiler",
+              "options": {
+                      "option.languagestandard": "-std=gnu++14"                   
+,                      "option.debuglevel": "-g3"                   
+,                      "option.optimization.level": "-O0"                   
+,                      "option.ffunction": "-ffunction-sections"                   
+,                      "option.fdata": "-fdata-sections"                   
+,                      "option.noexceptions": "-fno-exceptions"                   
+,                      "option.nortti": "-fno-rtti"                   
+,                      "option.nousecxaatexit": "-fno-use-cxa-atexit"                   
+,                      "option.warnings.all": "-Wall"                   
+,                      "option.fstackusage": "-fstack-usage"                   
+,                      "option.cyclomaticcomplexity": "-fcyclomatic-complexity"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-std=gnu++14",
+
+                  "-g3",
+
+                  "-O0",
+
+                  "-ffunction-sections",
+
+                  "-fdata-sections",
+
+                  "-fno-exceptions",
+
+                  "-fno-rtti",
+
+                  "-fno-use-cxa-atexit",
+
+                  "-Wall",
+
+                  "-fstack-usage",
+
+                  "-fcyclomatic-complexity"
+              ]
+            }
+,            {
+              "type": "c_linker",
+              "options": {
+                      "option.script": "-T\"C:/Users/jirik/OneDrive - VUT/5 SSY/projekt/Zigbee_OnOff_Client_Router/STM32CubeIDE/STM32WBA55CGUX_FLASH.ld\""                   
+,                      "option.systemcalls": "--specs=nosys.specs"                   
+,                      "option.map": "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\""                   
+,                      "option.gcsections": "-Wl,--gc-sections"                   
+,                      "option.static": "-static"                   
+,                      "option.generate.secure.lib": "-Wl,--cmse-implib -Wl,--out-implib=./secure_nsclib.o"                   
+,                      "option.libraries": "-l:WBA5_LinkLayer15_4.a, -l:wba_mac_lib.a, -l:ZigBeeClusters.a, -l:ZigBeeProR23_FFD.a"                   
+,                      "option.directories": "-L../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/lib, -L../../Middlewares/ST/STM32_WPAN/mac_802_15_4/lib, -L../../Middlewares/ST/STM32_WPAN/zigbee/clusters, -L../../Middlewares/ST/STM32_WPAN/zigbee/stack"                   
+,                      "option.uselinkergroup": "-Wl,--start-group $(LIBS) -Wl,--end-group"                   
+,                      "option.libmath": "-Wl,--start-group -lc -lm -Wl,--end-group"                   
+,                      "option.otherflags": "[-z noexecstack]"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-T\"C:/Users/jirik/OneDrive - VUT/5 SSY/projekt/Zigbee_OnOff_Client_Router/STM32CubeIDE/STM32WBA55CGUX_FLASH.ld\"",
+
+                  "--specs=nosys.specs",
+
+                  "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\"",
+
+                  "-Wl,--gc-sections",
+
+                  "-static",
+
+                  "-l:WBA5_LinkLayer15_4.a",
+
+                  "-l:wba_mac_lib.a",
+
+                  "-l:ZigBeeClusters.a",
+
+                  "-l:ZigBeeProR23_FFD.a",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/lib",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/mac_802_15_4/lib",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/zigbee/clusters",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/zigbee/stack"
+              ]
+            }
+,            {
+              "type": "cpp_linker",
+              "options": {
+                      "option.script": "-T\"\""                   
+,                      "option.systemcalls": "--specs=nosys.specs"                   
+,                      "option.map": "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\""                   
+,                      "option.gcsections": "-Wl,--gc-sections"                   
+,                      "option.static": "-static"                   
+,                      "option.generate.secure.lib": "-Wl,--cmse-implib -Wl,--out-implib=./secure_nsclib.o"                   
+,                      "option.libmath": "-Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-T\"\"",
+
+                  "--specs=nosys.specs",
+
+                  "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\"",
+
+                  "-Wl,--gc-sections",
+
+                  "-static"
+              ]
+            }
+,            {
+              "type": "c_archiver",
+              "options": {
+                      "option.replace": "-r"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-r"
+              ]
+            }
+      ]
+    },
+    {
+      "name": "Release",
+      "output_filename": "Zigbee_OnOff_Client_Router",
+      "type": "Executable",
+      "toolchain_type": "GCC",
+      "toolchain_prefix": "arm-none-eabi-",
+      "mcu": "STM32WBA52CGUx",
+      "board": "NUCLEO-WBA52CG",
+      "sources": [
+        { "path": "../Core/Src/app_entry.c" },
+
+        { "path": "../Core/Src/main.c" },
+
+        { "path": "../Core/Src/stm32wbaxx_hal_msp.c" },
+
+        { "path": "../Core/Src/stm32wbaxx_it.c" },
+
+        { "path": "Application/User/Core/syscalls.c" },
+
+        { "path": "Application/User/Core/sysmem.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee_endpoint.c" },
+
+        { "path": "../STM32_WPAN/App/app_zigbee_utility.c" },
+
+        { "path": "../STM32_WPAN/Target/linklayer_plat.c" },
+
+        { "path": "../STM32_WPAN/Target/ll_sys_if.c" },
+
+        { "path": "../STM32_WPAN/Target/mac_sys_if.c" },
+
+        { "path": "../STM32_WPAN/Target/power_table.c" },
+
+        { "path": "../STM32_WPAN/Target/zigbee_plat.c" },
+
+        { "path": "../STM32_WPAN/Target/zigbee_sys_if.c" },
+
+        { "path": "Application/User/Startup/startup_stm32wba55cgux.s" },
+
+        { "path": "../System/Config/CRC_Ctrl/crc_ctrl_conf.c" },
+
+        { "path": "../System/Config/Debug_GPIO/app_debug.c" },
+
+        { "path": "../System/Config/LowPower/peripheral_init.c" },
+
+        { "path": "../System/Config/LowPower/user_low_power_config.c" },
+
+        { "path": "../System/Interfaces/stm32_lpm_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/app_bsp.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/hw_aes.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/hw_rng.c" },
+
+        { "path": "../Projects/Common/WPAN/Interfaces/timer_if.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_ccm.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_cmac.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/BasicAES/baes_ecb.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/Log/log_module.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RFControl/rf_antenna_switch.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RTDebug/RTDebug.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/RTDebug/RTDebug_dtb.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/SerialCmdInterpreter/serial_cmd_interpreter.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/app_sys.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/crc_ctrl.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/otp.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/scm.c" },
+
+        { "path": "../Projects/Common/WPAN/Modules/stm_list.c" },
+
+        { "path": "../Projects/Common/WPAN/Startup/stm32wbaxx_ResetHandler_GCC.s" },
+
+        { "path": "../readme.md" },
+
+        { "path": "../Drivers/BSP/STM32WBAxx_Nucleo/stm32wbaxx_nucleo.c" },
+
+        { "path": "../Core/Src/system_stm32wbaxx.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_adc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_adc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_comp.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cortex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_crc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_crc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cryp.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_cryp_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_dma.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_dma_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_exti.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_gpio.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_gtzc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_hash.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_hsem.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_i2c.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_i2c_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_icache.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_irda.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_iwdg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_lptim.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pka.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pwr.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_pwr_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_ramcfg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rcc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rcc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rng.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rng_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rtc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_rtc_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_sai.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_sai_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smartcard.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smartcard_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smbus.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_smbus_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_spi.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_spi_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tim.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tim_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_tsc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_uart.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_uart_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_usart.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_usart_ex.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_wwdg.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_ll_rcc.c" },
+
+        { "path": "../Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_ll_tim.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_cs.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_dp_slp.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_intf.c" },
+
+        { "path": "../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/src/ll_sys_startup.c" },
+
+        { "path": "../Utilities/trace/adv_trace/stm32_adv_trace.c" },
+
+        { "path": "../Utilities/lpm/tiny_lpm/stm32_lpm.c" },
+
+        { "path": "../Utilities/misc/stm32_mem.c" },
+
+        { "path": "../Utilities/sequencer/stm32_seq.c" },
+
+        { "path": "../Utilities/tim_serv/stm32_timer.c" },
+
+        { "path": "../Utilities/misc/stm32_tiny_vsnprintf.c" }
+      ],
+      "tools": [
+            {
+              "type": "c_assembler",
+              "options": {
+                      "option.definedsymbols": "-DGenericAssemblerDefine"                   
+,                      "option.preprocessassembler": "-x assembler-with-cpp"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-DGenericAssemblerDefine",
+
+                  "-x",
+
+                  "assembler-with-cpp"
+              ]
+            }
+,            {
+              "type": "c_compiler",
+              "options": {
+                      "option.languagestandard": "-std=gnu11"                   
+,                      "option.definedsymbols": "-DSTM32, -DSTM32WBA, -DSTM32WBA55xx, -DSTM32WBA55CGUx, -DUSE_HAL_DRIVER, -DUSE_FULL_ASSERT, -DUSE_FULL_LL_DRIVER, -DMAC, -DMAC_LAYER, -DAPPLICATION_USE_BAREMETAL, -DAPPLICATION_USE_NUCLEO, -DAPPLICATION_USE_HW_AES, -DAPPLICATION_USE_HW_RNG"                   
+,                      "option.includepaths": "-I../../Core/Inc, -I../../STM32_WPAN/App, -I../../STM32_WPAN/Target, -I../../System/Config/CRC_Ctrl, -I../../System/Config/Debug_GPIO, -I../../System/Config, -I../../System/Config/Log, -I../../System/Config/LowPower, -I../../System/Interfaces, -I../../Projects/Common/WPAN/Interfaces, -I../../Projects/Common/WPAN/Modules, -I../../Projects/Common/WPAN/Modules/BasicAES, -I../../Projects/Common/WPAN/Modules/Flash, -I../../Projects/Common/WPAN/Modules/Log, -I../../Projects/Common/WPAN/Modules/MemoryManager, -I../../Projects/Common/WPAN/Modules/RTDebug, -I../../Projects/Common/WPAN/Modules/SerialCmdInterpreter, -I../../Drivers/CMSIS/Include, -I../../Drivers/CMSIS/Device/ST/STM32WBAxx/Include, -I../../Drivers/STM32WBAxx_HAL_Driver/Inc, -I../../Drivers/BSP/Components/Common, -I../../Drivers/BSP/STM32WBAxx_Nucleo, -I../../Middlewares/ST/STM32_WPAN, -I../../Middlewares/ST/STM32_WPAN/zigbee/include, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/include, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/stm32wba, -I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/mac, -I../../Middlewares/ST/STM32_WPAN/mac_802_15_4/core/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/config/ieee_15_4_basic, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc, -I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc/ot_inc, -I../../Middlewares/ST/STM32_WPAN/utilities, -I../../Middlewares/ST/STM32_WPAN/interface, -I../../Utilities/conf, -I../../Utilities/lpm/tiny_lpm, -I../../Utilities/misc, -I../../Utilities/sequencer, -I../../Utilities/tim_serv, -I../../Utilities/trace/adv_trace"                   
+,                      "option.optimization.level": "-O3"                   
+,                      "option.ffunction": "-ffunction-sections"                   
+,                      "option.fdata": "-fdata-sections"                   
+,                      "option.warnings.all": "-Wall"                   
+,                      "option.fstackusage": "-fstack-usage"                   
+,                      "option.cyclomaticcomplexity": "-fcyclomatic-complexity"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-std=gnu11",
+
+                  "-DSTM32",
+
+                  "-DSTM32WBA",
+
+                  "-DSTM32WBA55xx",
+
+                  "-DSTM32WBA55CGUx",
+
+                  "-DUSE_HAL_DRIVER",
+
+                  "-DUSE_FULL_ASSERT",
+
+                  "-DUSE_FULL_LL_DRIVER",
+
+                  "-DMAC",
+
+                  "-DMAC_LAYER",
+
+                  "-DAPPLICATION_USE_BAREMETAL",
+
+                  "-DAPPLICATION_USE_NUCLEO",
+
+                  "-DAPPLICATION_USE_HW_AES",
+
+                  "-DAPPLICATION_USE_HW_RNG",
+
+                  "-I../../Core/Inc",
+
+                  "-I../../STM32_WPAN/App",
+
+                  "-I../../STM32_WPAN/Target",
+
+                  "-I../../System/Config/CRC_Ctrl",
+
+                  "-I../../System/Config/Debug_GPIO",
+
+                  "-I../../System/Config",
+
+                  "-I../../System/Config/Log",
+
+                  "-I../../System/Config/LowPower",
+
+                  "-I../../System/Interfaces",
+
+                  "-I../../Projects/Common/WPAN/Interfaces",
+
+                  "-I../../Projects/Common/WPAN/Modules",
+
+                  "-I../../Projects/Common/WPAN/Modules/BasicAES",
+
+                  "-I../../Projects/Common/WPAN/Modules/Flash",
+
+                  "-I../../Projects/Common/WPAN/Modules/Log",
+
+                  "-I../../Projects/Common/WPAN/Modules/MemoryManager",
+
+                  "-I../../Projects/Common/WPAN/Modules/RTDebug",
+
+                  "-I../../Projects/Common/WPAN/Modules/SerialCmdInterpreter",
+
+                  "-I../../Drivers/CMSIS/Include",
+
+                  "-I../../Drivers/CMSIS/Device/ST/STM32WBAxx/Include",
+
+                  "-I../../Drivers/STM32WBAxx_HAL_Driver/Inc",
+
+                  "-I../../Drivers/BSP/Components/Common",
+
+                  "-I../../Drivers/BSP/STM32WBAxx_Nucleo",
+
+                  "-I../../Middlewares/ST/STM32_WPAN",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/include",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/include",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/stm32wba",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/zigbee/stack/port/mac",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/mac_802_15_4/core/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_sys/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/config/ieee_15_4_basic",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/inc/ot_inc",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/utilities",
+
+                  "-I../../Middlewares/ST/STM32_WPAN/interface",
+
+                  "-I../../Utilities/conf",
+
+                  "-I../../Utilities/lpm/tiny_lpm",
+
+                  "-I../../Utilities/misc",
+
+                  "-I../../Utilities/sequencer",
+
+                  "-I../../Utilities/tim_serv",
+
+                  "-I../../Utilities/trace/adv_trace",
+
+                  "-O3",
+
+                  "-ffunction-sections",
+
+                  "-fdata-sections",
+
+                  "-Wall",
+
+                  "-fstack-usage",
+
+                  "-fcyclomatic-complexity"
+              ]
+            }
+,            {
+              "type": "cpp_compiler",
+              "options": {
+                      "option.languagestandard": "-std=gnu++14"                   
+,                      "option.optimization.level": "-Os"                   
+,                      "option.ffunction": "-ffunction-sections"                   
+,                      "option.fdata": "-fdata-sections"                   
+,                      "option.noexceptions": "-fno-exceptions"                   
+,                      "option.nortti": "-fno-rtti"                   
+,                      "option.nousecxaatexit": "-fno-use-cxa-atexit"                   
+,                      "option.warnings.all": "-Wall"                   
+,                      "option.fstackusage": "-fstack-usage"                   
+,                      "option.cyclomaticcomplexity": "-fcyclomatic-complexity"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-std=gnu++14",
+
+                  "-Os",
+
+                  "-ffunction-sections",
+
+                  "-fdata-sections",
+
+                  "-fno-exceptions",
+
+                  "-fno-rtti",
+
+                  "-fno-use-cxa-atexit",
+
+                  "-Wall",
+
+                  "-fstack-usage",
+
+                  "-fcyclomatic-complexity"
+              ]
+            }
+,            {
+              "type": "c_linker",
+              "options": {
+                      "option.script": "-T\"C:/Users/jirik/OneDrive - VUT/5 SSY/projekt/Zigbee_OnOff_Client_Router/STM32CubeIDE/STM32WBA55CGUX_FLASH.ld\""                   
+,                      "option.systemcalls": "--specs=nosys.specs"                   
+,                      "option.map": "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\""                   
+,                      "option.gcsections": "-Wl,--gc-sections"                   
+,                      "option.static": "-static"                   
+,                      "option.generate.secure.lib": "-Wl,--cmse-implib -Wl,--out-implib=./secure_nsclib.o"                   
+,                      "option.libraries": "-l:WBA5_LinkLayer15_4.a, -l:wba_mac_lib.a, -l:ZigBeeClusters.a, -l:ZigBeeProR23_FFD.a"                   
+,                      "option.directories": "-L../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/lib, -L../../Middlewares/ST/STM32_WPAN/mac_802_15_4/lib, -L../../Middlewares/ST/STM32_WPAN/zigbee/clusters, -L../../Middlewares/ST/STM32_WPAN/zigbee/stack"                   
+,                      "option.uselinkergroup": "-Wl,--start-group $(LIBS) -Wl,--end-group"                   
+,                      "option.libmath": "-Wl,--start-group -lc -lm -Wl,--end-group"                   
+,                      "option.otherflags": "[-z noexecstack]"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-T\"C:/Users/jirik/OneDrive - VUT/5 SSY/projekt/Zigbee_OnOff_Client_Router/STM32CubeIDE/STM32WBA55CGUX_FLASH.ld\"",
+
+                  "--specs=nosys.specs",
+
+                  "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\"",
+
+                  "-Wl,--gc-sections",
+
+                  "-static",
+
+                  "-l:WBA5_LinkLayer15_4.a",
+
+                  "-l:wba_mac_lib.a",
+
+                  "-l:ZigBeeClusters.a",
+
+                  "-l:ZigBeeProR23_FFD.a",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/link_layer/ll_cmd_lib/lib",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/mac_802_15_4/lib",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/zigbee/clusters",
+
+                  "-L../../Middlewares/ST/STM32_WPAN/zigbee/stack"
+              ]
+            }
+,            {
+              "type": "cpp_linker",
+              "options": {
+                      "option.script": "-T\"\""                   
+,                      "option.systemcalls": "--specs=nosys.specs"                   
+,                      "option.map": "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\""                   
+,                      "option.gcsections": "-Wl,--gc-sections"                   
+,                      "option.static": "-static"                   
+,                      "option.generate.secure.lib": "-Wl,--cmse-implib -Wl,--out-implib=./secure_nsclib.o"                   
+,                      "option.libmath": "-Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-T\"\"",
+
+                  "--specs=nosys.specs",
+
+                  "-Wl,-Map=\"Zigbee_OnOff_Client_Router.map\"",
+
+                  "-Wl,--gc-sections",
+
+                  "-static"
+              ]
+            }
+,            {
+              "type": "c_archiver",
+              "options": {
+                      "option.replace": "-r"                   
+              },
+
+              
+              "flags": [
+                  "-mfpu=fpv5-sp-d16",
+
+                  "-mfloat-abi=hard",
+
+                  "-mthumb",
+
+                  "--specs=nano.specs",
+
+                  "-u _printf_float",
+
+                  "-mcpu=cortex-m33",
+
+                  "-r"
+              ]
+            }
+      ]
+    }
+  ]
+}
