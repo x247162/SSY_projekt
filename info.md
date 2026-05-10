@@ -6,7 +6,4 @@ Senzory teploty a barvy jsou simulovány náhodnými čísly, jelikož při tvor
 Po zprovoznění komunikace jsme se již samotnými senzory znovu nestihli zabývat.
 
 
-**Spuštění:**
-v repozitáři jsou tři archivy, protože se mi nepovedlo nahrát všechny tři zařízení do jednoho repozitaře, ale jiných branchů. Po tom co jsem to jednou skoro smazal, jsem to radši udelal takto.
-
 **Struktura projektů je pro cmake ve VS Code**
