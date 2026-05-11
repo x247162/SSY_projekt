@@ -102,6 +102,7 @@ For this application it is requested to have:
 	   - Wait until the Blue LED stays ON before proceeding.
 	3. Start the third board as the Router2. This board runs the **Zigbee_OnOff_Client_Router** application.
 	   - Wait until the Blue LED stays ON. The buttons are now active.
+
 **Note:** Red/Green/Blue blinking may indicate an application error on any device.
 
 ### __Serial monitor__
